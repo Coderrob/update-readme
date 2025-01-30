@@ -1,50 +1,19 @@
 {
-  "name": "typescript-action",
-  "description": "GitHub Actions TypeScript template",
-  "version": "0.0.0",
-  "author": "",
-  "type": "module",
-  "private": true,
-  "homepage": "https://github.com/actions/typescript-action",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
-  },
+  "author": "Robert Lindley (coderrob)",
   "bugs": {
-    "url": "https://github.com/actions/typescript-action/issues"
+    "url": "https://github.com/Coderrob/update-action-readme/issues"
   },
-  "keywords": [
-    "actions"
-  ],
-  "exports": {
-    ".": "./dist/index.js"
-  },
-  "engines": {
-    "node": ">=20"
-  },
-  "scripts": {
-    "bundle": "npm run format:write && npm run package",
-    "ci-test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 npx jest",
-    "coverage": "npx make-coverage-badge --output-path ./badges/coverage.svg",
-    "format:write": "npx prettier --write .",
-    "format:check": "npx prettier --check .",
-    "lint": "npx eslint .",
-    "local-action": "npx local-action . src/main.ts .env",
-    "package": "npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
-    "package:watch": "npm run package -- --watch",
-    "test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 npx jest",
-    "all": "npm run format:write && npm run lint && npm run test && npm run coverage && npm run package"
-  },
-  "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.11.1"
   },
+  "description": "A GitHub action to update the README.md file with the latest version of the package.",
   "devDependencies": {
     "@eslint/compat": "^1.2.5",
     "@github/local-action": "^2.5.1",
     "@jest/globals": "^29.7.0",
     "@rollup/plugin-commonjs": "^28.0.1",
     "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.1",
     "@types/jest": "^29.5.14",
     "@types/node": "^20.17.14",
@@ -66,7 +35,39 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   },
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": "./dist/index.mjs"
+  },
+  "homepage": "https://github.com/Coderrob/update-action-readme",
+  "keywords": [
+    "actions"
+  ],
+  "license": "MIT",
+  "name": "typescript-action",
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "*"
-  }
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/actions/typescript-action.git"
+  },
+  "scripts": {
+    "all": "npm run lint:fix && npm run lint && npm run test && npm run coverage && npm run package",
+    "bundle": "npm run lint:fix && npm run package",
+    "coverage": "npx make-coverage-badge --output-path ./badges/coverage.svg",
+    "dev": "npx local-action . src/main.ts .env",
+    "format": "npx prettier --write .",
+    "format:check": "npx prettier --check .",
+    "lint": "npm run format:check && npx eslint .",
+    "lint:fix": "npm run format && npx eslint . --fix",
+    "package": "npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "package:watch": "npm run package -- --watch",
+    "test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 npx jest"
+  },
+  "type": "module",
+  "version": "0.0.1"
 }
