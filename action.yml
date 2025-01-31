@@ -1,24 +1,42 @@
-name: The name of your action here
-description: Provide a description here
-author: Your name or organization here
+name: 'Update README with Action Metadata'
+description:
+  'This action updates the README with metadata about the action, such as inputs
+  and outputs.'
+author: 'Robert Lindley'
 
-# Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
-  icon: heart
-  color: red
+  color: 'green'
+  icon: 'book'
 
-# Define your inputs here.
 inputs:
-  milliseconds:
-    description: Your input description here
-    required: true
-    default: '1000'
-
-# Define your outputs here.
-outputs:
-  time:
-    description: Your output description here
+  github_host:
+    description:
+      "The GitHub host URL (e.g., https://github.com). Defaults to
+      'https://github.com'."
+    default: 'https://github.com'
+    required: false
+  github_repo:
+    description:
+      'The repository name (e.g., username/repo). Defaults to the current
+      repository.'
+    default: '${{ github.repository }}'
+    required: false
+  github_token:
+    description:
+      'The GitHub token for authentication. Defaults to the GITHUB_TOKEN secret.'
+    default: '${{ github.token }}'
+    required: false
+  readme_file:
+    description: "The path to the README file. Defaults to 'README.md'."
+    required: false
+    default: 'README.md'
 
 runs:
-  using: node20
-  main: dist/index.mjs
+  using: 'composite'
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Update README
+      shell: bash
+      run: python ./src/main.py

@@ -4,7 +4,9 @@
     "url": "https://github.com/Coderrob/update-action-readme/issues"
   },
   "dependencies": {
-    "@actions/core": "^1.11.1"
+    "@actions/core": "^1.11.1",
+    "ts-markdown": "^1.2.0",
+    "zod": "^3.24.1"
   },
   "description": "A GitHub action to update the README.md file with the latest version of the package.",
   "devDependencies": {
