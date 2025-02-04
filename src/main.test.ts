@@ -18,6 +18,7 @@ describe('main', () => {
   it('should create a new README.md file for an action.yml file', async () => {
     getInputMock.mockImplementationOnce(() => 'action.yml');
 
+    // todo: I am aware this does the real thing. Adding test coverage in coming pull request.
     await run();
 
     expect(getInputMock).toHaveBeenCalledTimes(1);

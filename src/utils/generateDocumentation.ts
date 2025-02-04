@@ -125,7 +125,7 @@ export const generateDocumentation = (
   doc += '```\n';
 
   // Footer / update notice
-  doc += `\n*This documentation was automatically generated from the \`action.yml\` definition.*\n`;
-
+  doc += `\n*This documentation was automatically generated from the \`action.yml\` definition.*\n\n`;
+  doc += `<a href="https://www.buymeacoffee.com/coderrob" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-white.png" alt="Buy Me A Coffee" style="height: 25px !important;width: 100px !important;" ></a>`;
   return doc;
 };
