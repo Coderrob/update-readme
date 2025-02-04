@@ -1,106 +1,46 @@
 # Update Action README
 
-[![GitHub Super-Linter](https://github.com/actions/typescript-action/actions/workflows/linter.yml/badge.svg)](https://github.com/super-linter/super-linter)
-![CI](https://github.com/actions/typescript-action/actions/workflows/ci.yml/badge.svg)
-[![Check dist/](https://github.com/actions/typescript-action/actions/workflows/check-dist.yml/badge.svg)](https://github.com/actions/typescript-action/actions/workflows/check-dist.yml)
-[![CodeQL](https://github.com/actions/typescript-action/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/actions/typescript-action/actions/workflows/codeql-analysis.yml)
-[![Coverage](./badges/coverage.svg)](./badges/coverage.svg)
+Update the README for an action based on its YAML configuration.
 
-## Work in progress
+**Author:** Robert "coderrob" Lindley
 
-. . .
+**Branding:**
 
-# GitHub Action: Update Action README
+- **Color:** black
+- **Icon:** book-open
 
-This GitHub Action automates the creation process for a static site README
-documentation for GitHub Actions. It is designed to integrate seamlessly into
-your CI/CD workflow.
+## Inputs
 
-## 🚀 Usage
+| Name               | Description                                                                        | Default      | Required |
+| ------------------ | ---------------------------------------------------------------------------------- | ------------ | -------- |
+| `action-yaml-path` | The path to the action's YAML configuration file. This defaults to './action.yml'. | ./action.yml | Yes      |
+| `timeout-minutes`  | The maximum number of minutes to wait before timing out. Default is 5 minutes.     | 5            | No       |
 
-To use this action, add the following step to your workflow:
+## Outputs
+
+This action does not define any outputs.
+
+## Runs
+
+**Type:** Node.js Action
+
+- **Entry Point:** `dist/index.mjs`
+
+## Example Usage
 
 ```yaml
+# Example workflow using this action
 jobs:
-  my_job:
+  example:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Run My Custom Action
-        uses: my-org/my-action@v1
+      - uses: actions/checkout@v2
+      - name: Run Update Action README
+        uses: ./
         with:
-          input1: 'value1'
-          input2: 'value2'
+          action-yaml-path: <value>
+          timeout-minutes: <value>
 ```
 
-## 📥 Inputs
-
-| Name     | Description           | Required | Default         |
-| -------- | --------------------- | -------- | --------------- |
-| `input1` | Description of input1 | ✅ Yes   | -               |
-| `input2` | Description of input2 | ❌ No    | `default_value` |
-
-## 📤 Outputs
-
-| Name      | Description                         |
-| --------- | ----------------------------------- |
-| `output1` | Provides the processed data result. |
-| `output2` | Status message of the action.       |
-
-## 🔧 Example Workflow
-
-Here’s a complete example of a workflow using this action:
-
-```yaml
-name: Example Workflow
-on: [push]
-
-jobs:
-  example_job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Use My Custom Action
-        id: my_action
-        uses: my-org/my-action@v1
-        with:
-          input1: "example_value"
-
-      - name: Output Results
-        run: echo "The action returned: ${{ steps.my_action.outputs.output1 }}"
-```
-
-## 📄 Action Configuration (`action.yml`)
-
-For reference, here’s the `action.yml` file:
-
-```yaml
-name: 'My Custom Action'
-description: 'A brief explanation of what this action does.'
-inputs:
-  input1:
-    description: 'The first input parameter.'
-    required: true
-  input2:
-    description: 'The second input parameter.'
-    required: false
-    default: 'default_value'
-outputs:
-  output1:
-    description: 'The main result of the action.'
-  output2:
-    description: 'A status message.'
-runs:
-  using: 'node16'
-  main: 'dist/index.js'
-```
-
-## 📚 Additional Information
-
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [My Custom Action Repository](https://github.com/my-org/my-action)
-- [Issues & Feature Requests](https://github.com/my-org/my-action/issues)
+_This documentation was automatically generated from the `action.yml`
+definition._

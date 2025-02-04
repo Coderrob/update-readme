@@ -1,7 +1,5 @@
-name: 'Update README with Action Metadata'
-description:
-  'This action updates the README with metadata about the action, such as inputs
-  and outputs.'
+name: Update README with Action Metadata
+description: Update README with action metadata.
 author: 'Robert Lindley'
 
 branding:
@@ -9,34 +7,22 @@ branding:
   icon: 'book'
 
 inputs:
-  github_host:
-    description:
-      "The GitHub host URL (e.g., https://github.com). Defaults to
-      'https://github.com'."
-    default: 'https://github.com'
-    required: false
-  github_repo:
-    description:
-      'The repository name (e.g., username/repo). Defaults to the current
-      repository.'
-    default: '${{ github.repository }}'
-    required: false
-  github_token:
-    description:
-      'The GitHub token for authentication. Defaults to the GITHUB_TOKEN secret.'
-    default: '${{ github.token }}'
-    required: false
-  readme_file:
+  readme-file-path:
     description: "The path to the README file. Defaults to 'README.md'."
     required: false
     default: 'README.md'
+  action-yaml-path:
+    description:
+      The path to the action's YAML configuration file. This defaults to
+      'action.yml'.
+    required: true
+    default: 'action.yml'
+  timeout-minutes:
+    description:
+      The maximum number of minutes to wait before timing out. Default is 5
+      minutes.
+    default: '5'
 
 runs:
-  using: 'composite'
-  steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Update README
-      shell: bash
-      run: python ./src/main.py
+  using: 'node20'
+  main: './dist/index.js'

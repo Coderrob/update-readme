@@ -22,7 +22,7 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ['**/coverage', '**/dist', '**/linter', '**/node_modules']
+    ignores: ['**/coverage', '**/dist', '**/node_modules']
   },
   ...compat.extends(
     'eslint:recommended',
@@ -75,7 +75,9 @@ export default [
       'no-console': 'off',
       'no-shadow': 'off',
       'no-unused-vars': 'off',
-      'prettier/prettier': 'error'
+      'prettier/prettier': ['error', { semi: true }],
+      'space-in-parens': ['error', 'never'],
+      'spaced-comment': ['error', 'always']
     }
   }
 ];
