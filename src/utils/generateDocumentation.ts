@@ -99,7 +99,7 @@ export const generateDocumentation = (
 
     case 'docker':
       doc += `**Type:** Docker Action\n\n`;
-      doc += `- **Dockerfile:** \`${runs.dockerfile}\`\n`;
+      doc += `- **Dockerfile:** \`${runs.image}\`\n`;
       break;
 
     default:
