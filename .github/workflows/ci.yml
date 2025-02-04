@@ -8,20 +8,26 @@ on:
     branches:
       - main
 
+defaults:
+  run:
+    shell: bash
+
 permissions:
   contents: read
+  packages: read
+  statuses: write
 
 jobs:
-  test-typescript:
-    name: TypeScript Tests
+  unit-test:
+    name: Unit Testing
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout Source
         id: checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node
         id: setup-node
         uses: actions/setup-node@v4
         with:
@@ -32,33 +38,45 @@ jobs:
         id: npm-ci
         run: npm ci
 
-      - name: Check Format
+      - name: Style Check
         id: npm-format-check
         run: npm run format:check
 
-      - name: Lint
+      - name: Lint Check
         id: npm-lint
         run: npm run lint
 
-      - name: Test
+      - name: Lint Codebase
+        id: super-linter
+        uses: super-linter/super-linter/slim@v7
+        env:
+          DEFAULT_BRANCH: main
+          FILTER_REGEX_EXCLUDE: dist/**/*
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LINTER_RULES_PATH: ${{ github.workspace }}
+          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_JAVASCRIPT_ES: false
+          VALIDATE_JAVASCRIPT_STANDARD: false
+          VALIDATE_JSCPD: false
+          VALIDATE_TYPESCRIPT_ES: false
+          VALIDATE_JSON: false
+          VALIDATE_TYPESCRIPT_STANDARD: false
+
+      - name: Unit Tests
         id: npm-ci-test
         run: npm run ci-test
 
-  test-action:
-    name: GitHub Actions Test
+  integration-test:
+    name: Integration Testing
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout Source
         id: checkout
         uses: actions/checkout@v4
 
-      - name: Test Local Action
+      - name: Integration Test
         id: test-action
         uses: ./
         with:
-          milliseconds: 2000
-
-      - name: Print Output
-        id: output
-        run: echo "${{ steps.test-action.outputs.time }}"
+          action-yaml-path: ./action.yml
