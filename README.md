@@ -1,20 +1,21 @@
-# Update Action README
+# Update README with Action Metadata
 
-Update the README for an action based on its YAML configuration.
+Update README with action metadata.
 
-**Author:** Robert "coderrob" Lindley
+**Author:** Robert Lindley
 
 **Branding:**
 
-- **Color:** black
-- **Icon:** book-open
+- **Color:** green
+- **Icon:** book
 
 ## Inputs
 
-| Name               | Description                                                                        | Default      | Required |
-| ------------------ | ---------------------------------------------------------------------------------- | ------------ | -------- |
-| `action-yaml-path` | The path to the action's YAML configuration file. This defaults to './action.yml'. | ./action.yml | Yes      |
-| `timeout-minutes`  | The maximum number of minutes to wait before timing out. Default is 5 minutes.     | 5            | No       |
+| Name               | Description                                                                      | Default    | Required |
+| ------------------ | -------------------------------------------------------------------------------- | ---------- | -------- |
+| `readme-file-path` | The path to the README file. Defaults to 'README.md'.                            | README.md  | ❌ No    |
+| `action-yaml-path` | The path to the action's YAML configuration file. This defaults to 'action.yml'. | action.yml | ✅ Yes   |
+| `timeout-minutes`  | The maximum number of minutes to wait before timing out. Default is 5 minutes.   | 5          | ❌ No    |
 
 ## Outputs
 
@@ -24,7 +25,7 @@ This action does not define any outputs.
 
 **Type:** Node.js Action
 
-- **Entry Point:** `dist/index.mjs`
+- **Entry Point:** `./dist/index.js`
 
 ## Example Usage
 
@@ -35,9 +36,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run Update Action README
+      - name: Run Update README with Action Metadata
         uses: ./
         with:
+          readme-file-path: <value>
           action-yaml-path: <value>
           timeout-minutes: <value>
 ```
