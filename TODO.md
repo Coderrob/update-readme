@@ -56,8 +56,14 @@ priority, an estimated time to complete, and a person assigned to it.
         dependencies for known vulnerabilities.
 
 - [ ] Review and update permissions in GitHub Actions workflow files.
+
   - [ ] Ensure that logs do not contain sensitive information by implementing a
         logging strategy that masks such data.
+
+- [ ] Add pull request templates for different types of contributions (bug
+      fixes, feature requests, etc.).
+
+- [ ] Add contributor guidelines and code of conduct.
 
 ### In Progress
 
