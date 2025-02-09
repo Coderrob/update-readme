@@ -11,7 +11,7 @@ defaults:
     shell: bash
 
 jobs:
-  SBOM-upload:
+  create-sbom:
     runs-on: ubuntu-latest
 
     permissions:
@@ -30,7 +30,8 @@ jobs:
           chmod +x $RUNNER_TEMP/sbom-tool
           $RUNNER_TEMP/sbom-tool generate -b . -bc . -pn $ -pv 1.0.0 -ps coderrob -nsb https://coderrob.com -V Verbose
 
-      - uses: actions/upload-artifact@v4
+      - name: Upload SBOM Artifact
+        uses: actions/upload-artifact@v4
         with:
           name: sbom
           path: sbom.json
