@@ -47,4 +47,4 @@ jobs:
 _This documentation was automatically generated from the `action.yml`
 definition._
 
-<a href="https://www.buymeacoffee.com/coderrob" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-white.png" alt="Support this Action with coffee" style="height: 39px !important;width: 150px !important;" ></a>
+<a href="https://www.buymeacoffee.com/coderrob" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-white.png" alt="Buy Me A Coffee" style="height: 25px !important;width: 100px !important;" ></a>
