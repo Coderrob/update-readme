@@ -16,24 +16,8 @@ priority, an estimated time to complete, and a person assigned to it.
   - [ ] Implement a function that checks if the provided path is within the
         allowed directory.
 
-- [ ] Replace string builder approach to README format with a lightweight
-      template engine.
-
-- [ ] Replace hard-coded markdown syntax with ts-markdown or similar library.
-
-  - [ ] Consider using libraries like Handlebars or EJS for more robust and
-        maintainable templating.
-
-- [ ] Look into moving schema definitions for the Action into a separate
-      package. This will help in maintaining consistency and reducing errors
-      related to markdown generation.
-
 - [ ] Enforce minimum code coverage requirements to ensure an 85% code coverage
       rate.
-
-- [ ] Remove the "buy me coffee" link from the generated README file and replace
-      with less flashy "made by [Your Name]" message with a link back to this
-      origin repo.
 
 - [ ] Add a feature that allows users to specify custom templates for README
       generation.
@@ -43,12 +27,6 @@ priority, an estimated time to complete, and a person assigned to it.
   - [ ] Allow users to specify custom template files or URLs. Enable variable
         replacements in templates using values from the Action metadata. Provide
         a preview of the generated README before saving.
-
-- [ ] Integrate security scanning tools to identify vulnerabilities in
-      dependencies.
-
-  - [ ] Use libraries like validator for comprehensive input validation and
-        sanitization.
 
 - [ ] Implement logging with sensitive data redaction.
 
@@ -64,9 +42,31 @@ priority, an estimated time to complete, and a person assigned to it.
 
 ### In Progress
 
-- [x] Work on Github Repo TODO
+- [x] Integrate security scanning tools to identify vulnerabilities in
+      dependencies.
+
+  - [ ] Create SBOM export process for dependency analysis.
+  - [ ] Use libraries like validator for comprehensive input validation and
+        sanitization.
+
+- [ ] Look into moving schema definitions for the Action into a separate
+      package. This will help in maintaining consistency and reducing errors
+      related to markdown generation.
+
+  - [x] Generated action.schema.json to repository.
+  - [ ] Swap Zod with Ajv to validate schema after moving Zod definitions
+        outside of the Action repository.
 
 ### Done ✓
 
 - [x] Add pull request templates for different types of contributions (bug
       fixes, feature requests, etc.).
+
+- [x] Replace string builder approach to README format with a lightweight
+      template engine.
+
+- [x] Remove the "buy me coffee" link from the generated README file and replace
+      with less flashy "made by [Your Name]" message with a link back to this
+      origin repo.
+
+- [x] Replace hard-coded markdown syntax with ts-markdown or similar library.
