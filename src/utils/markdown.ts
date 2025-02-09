@@ -5,6 +5,7 @@ import { Inputs } from '../schema/inputs.js';
 import { Outputs } from '../schema/outputs.js';
 import { Runs } from '../schema/runs.js';
 import { CompositeRun, DockerRun } from '../types/run-types.js';
+import { NodeVersion } from '../types/node-version.js';
 
 /** Helper class for Markdown utilities */
 
@@ -133,6 +134,12 @@ export class MarkdownHelper {
             ].filter(Boolean)
           )
         ];
+      case NodeVersion.NODE16:
+      case NodeVersion.NODE18:
+      case NodeVersion.NODE20:
+      case NodeVersion.NODE22:
+        return [paragraph('This action uses a Node.js runtime configuration.')];
+
       default:
         return [
           paragraph('This action uses an unrecognized runtime configuration.')

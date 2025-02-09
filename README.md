@@ -1,6 +1,9 @@
 # Update README with Action Metadata
 
-Updates a README.md file with metadata from an action's YAML configuration file. This includes information such as the action name, description, inputs, outputs, and other relevant details. This ensures that the README is always up-to-date with the latest information about the action.
+Updates a README.md file with metadata from an action's YAML configuration file.
+This includes information such as the action name, description, inputs, outputs,
+and other relevant details. This ensures that the README is always up-to-date
+with the latest information about the action.
 
 ## Branding
 
@@ -13,8 +16,8 @@ Updates a README.md file with metadata from an action's YAML configuration file.
 
 | Name             | Description                                                                                                                                     | Default    | Required | Deprecation |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ----------- |
-| readme-file-path | The path to the README.md file that should be updated. This is relative to the repository root. If not specified, it defaults to 'README.md'.   | README.md  | ❌ No     | -           |
-| action-yaml-path | The path to the YAML configuration file for the action. This is relative to the repository root. If not specified, it defaults to 'action.yml'. | action.yml | ❌ No     | -           |
+| readme-file-path | The path to the README.md file that should be updated. This is relative to the repository root. If not specified, it defaults to 'README.md'.   | README.md  | ❌ No    | -           |
+| action-yaml-path | The path to the YAML configuration file for the action. This is relative to the repository root. If not specified, it defaults to 'action.yml'. | action.yml | ❌ No    | -           |
 
 ## Outputs
 
@@ -37,7 +40,7 @@ This section provides a graph of dependencies relevant to this action.
 
 **Execution Type:** node20
 
-This action uses an unrecognized runtime configuration.
+This action uses a Node.js runtime configuration.
 
 ## Example Usage
 
@@ -54,4 +57,5 @@ This action uses an unrecognized runtime configuration.
 
 ## Acknowledgments
 
-This project leverages markdown generation techniques from [coderrob.com](https://coderrob.com), developed by **Robert Lindley**.
+This project leverages markdown generation techniques from
+[coderrob.com](https://coderrob.com), developed by **Robert Lindley**.
