@@ -76,5 +76,5 @@
     "test": "cross-env NODE_OPTIONS=\"--experimental-vm-modules\" NODE_NO_WARNINGS=1 npx jest"
   },
   "type": "module",
-  "version": "0.0.1"
+  "version": "1.1.0"
 }
