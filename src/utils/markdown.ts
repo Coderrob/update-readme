@@ -4,8 +4,8 @@ import { Branding } from '../schema/branding.js';
 import { Inputs } from '../schema/inputs.js';
 import { Outputs } from '../schema/outputs.js';
 import { Runs } from '../schema/runs.js';
-import { CompositeRun, DockerRun } from '../types/run-types.js';
 import { NodeVersion } from '../types/node-version.js';
+import { CompositeRun, DockerRun } from '../types/run-types.js';
 
 /** Helper class for Markdown utilities */
 

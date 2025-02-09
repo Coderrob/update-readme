@@ -1,12 +1,12 @@
 import * as core from '@actions/core';
 
 import { DocumentationService } from './documentation-service.js';
-import { Input } from './types/input.js';
+import { ACTION_FILE_PATH, README_FILE_PATH } from './utils/constants.js';
 import { isError } from './utils/guards.js';
 
 export async function run(
-  actionYamlPath = core.getInput(Input.ACTION_YAML_PATH),
-  readmeFilePath = core.getInput(Input.README_FILE_PATH)
+  actionYamlPath = ACTION_FILE_PATH,
+  readmeFilePath = README_FILE_PATH
 ): Promise<void> {
   await DocumentationService.load(actionYamlPath)
     .then((service) => service.validate())
