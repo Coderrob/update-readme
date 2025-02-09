@@ -1,15 +1,16 @@
-import * as path from 'path';
-import { DEFAULT_BUFFER_ENCODING } from './constants.js';
 import { writeFile } from 'fs/promises';
+
+// import * as path from 'path';
+import { DEFAULT_BUFFER_ENCODING } from './constants.js';
 
 /**
  * Writes or updates the README.md file in the given directory.
  */
 export const writeReadme = async (
-  dir: string,
+  filePath: string,
   content: string
 ): Promise<void> => {
-  const readmePath = path.join(dir, 'README.md');
+  // const readmePath = path.join(dir, 'README.md');
 
   /**
    * Optionally: Merge existing content with new content if needed.
@@ -24,5 +25,5 @@ export const writeReadme = async (
   }
   */
 
-  await writeFile(readmePath, content, DEFAULT_BUFFER_ENCODING);
+  await writeFile(filePath, content, DEFAULT_BUFFER_ENCODING);
 };

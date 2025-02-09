@@ -11,17 +11,13 @@ inputs:
     description: "The path to the README file. Defaults to 'README.md'."
     required: false
     default: 'README.md'
+
   action-yaml-path:
     description:
       The path to the action's YAML configuration file. This defaults to
       'action.yml'.
     required: true
     default: 'action.yml'
-  timeout-minutes:
-    description:
-      The maximum number of minutes to wait before timing out. Default is 5
-      minutes.
-    default: '5'
 
 runs:
   using: 'node20'

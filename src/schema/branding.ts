@@ -1,11 +1,5 @@
 import { z } from 'zod';
 
-/**
- * Branding Schema
- */
-export const BrandingSchema = z
-  .object({
-    color: z.string(),
-    icon: z.string()
-  })
-  .strict();
+import { BrandingSchema } from './branding.schema.js';
+
+export type Branding = z.infer<typeof BrandingSchema>;
