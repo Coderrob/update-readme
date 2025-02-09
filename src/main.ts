@@ -1,6 +1,8 @@
 import * as core from '@actions/core';
+
 import { DocumentationService } from './documentation-service.js';
 import { Input } from './types/input.js';
+import { isError } from './utils/guards.js';
 
 export async function run(
   actionYamlPath = core.getInput(Input.ACTION_YAML_PATH),
@@ -8,5 +10,13 @@ export async function run(
 ): Promise<void> {
   await DocumentationService.load(actionYamlPath)
     .then((service) => service.validate())
-    .then((service) => service.save(readmeFilePath));
+    .then((service) => service.save(readmeFilePath))
+    .catch((error: Error) => {
+      const message = isError(error)
+        ? error.message
+        : `$Unknown error ${String(error)}`;
+      core.setFailed(
+        `Failed to update README with action metadata: ${message}`
+      );
+    });
 }

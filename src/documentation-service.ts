@@ -1,64 +1,67 @@
+import { header, p as paragraph, tsMarkdown } from 'ts-markdown';
+
 import * as core from '@actions/core';
+
 import { Action } from './schema/action.js';
 import { ActionSchema } from './schema/action.schema.js';
+import { CompositeRun, DockerRun } from './types/run-types.js';
+import { MarkdownHelper } from './utils/markdown.js';
 import { readYamlFile } from './utils/readYamlFile.js';
 import { writeReadme } from './utils/writeReadme.js';
-import {
-  header,
-  p as paragraph,
-  table,
-  codeblock,
-  h2,
-  tsMarkdown,
-  ul,
-  ol,
-  text
-} from 'ts-markdown';
-import { CompositeRun, DockerRun } from './types/run-types.js';
-import { NodeVersion } from './types/node-version.js';
-import { Runs } from './schema/runs.js';
 
 export class DocumentationService {
-  protected constructor(private readonly action: Action) {}
+  private constructor(private readonly action: Action) {}
 
+  /** Factory method to create an instance from an action YAML file */
   static async load(actionFilePath: string): Promise<DocumentationService> {
     const action: Action = await readYamlFile(actionFilePath);
     return new DocumentationService(action);
   }
 
-  async validate(): Promise<DocumentationService> {
+  /** Validates the action against the schema */
+  async validate(): Promise<this> {
     try {
       ActionSchema.parse(this.action);
     } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      core.setFailed(`Validation failed: ${message}`);
+      core.setFailed(
+        [
+          'Validation failed:',
+          error instanceof Error ? error.message : String(error)
+        ].join(' ')
+      );
     }
     return this;
   }
 
-  async save(filePath: string): Promise<DocumentationService> {
+  /** Generates and saves the documentation */
+  async save(filePath: string): Promise<this> {
     try {
       const documentation = await this.document();
       await writeReadme(filePath, documentation);
     } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      core.setFailed(`Saving documentation failed: ${message}`);
+      core.setFailed(
+        [
+          'Saving documentation failed:',
+          error instanceof Error ? error.message : String(error)
+        ].join(' ')
+      );
     }
     return this;
   }
 
+  /** Generates the full markdown documentation */
   async document(): Promise<string> {
     return tsMarkdown([
       this.getTitle(),
       this.getActionDescription(),
-      this.getBranding(),
-      this.getInputs(),
-      this.getOutputs(),
-      this.getEnvironmentVariables(),
-      this.getDependencies(),
-      this.getRunsDetails(),
-      this.getExampleUsage(),
-      this.getFooter()
+      ...this.getBranding(),
+      ...this.getInputs(),
+      ...this.getOutputs(),
+      ...this.getEnvironmentVariables(),
+      ...this.getDependencies(),
+      ...this.getRunsDetails(),
+      ...this.getExampleUsage(),
+      ...this.getFooter()
     ]);
   }
 
@@ -71,233 +74,69 @@ export class DocumentationService {
   }
 
   private getBranding() {
-    const { branding, author } = this.action;
-    return [
-      h2('Branding'),
-      ul(
-        [
-          branding ? `**Color:** ${branding.color}` : '',
-          branding ? `**Icon:** ${branding.icon}` : '',
-          author ? `**Author:** ${author}` : ''
-        ].filter(Boolean)
-      )
-    ];
+    return MarkdownHelper.createBrandingTable(this.action.branding);
   }
 
   private getInputs() {
-    const { inputs = {} } = this.action;
-    return [
-      h2('Inputs'),
-      Object.keys(inputs).length > 0
-        ? table({
-            columns: [
-              { name: 'Name' },
-              { name: 'Description' },
-              { name: 'Default' },
-              { name: 'Required' },
-              { name: 'Deprecation' }
-            ],
-            rows: Object.entries(inputs).map(
-              ([
-                key,
-                {
-                  description,
-                  default: defaultValue = '-',
-                  required,
-                  deprecationMessage
-                }
-              ]) => [
-                key,
-                description || '-',
-                defaultValue || '-',
-                required ? '✅ Yes' : '❌ No',
-                deprecationMessage || '-'
-              ]
-            )
-          })
-        : paragraph('This action does not define any inputs.')
-    ];
+    return MarkdownHelper.createInputsTable(this.action.inputs);
   }
 
   private getOutputs() {
-    const { outputs = {} } = this.action;
-    return [
-      h2('Outputs'),
-      Object.keys(outputs).length > 0
-        ? table({
-            columns: [
-              { name: 'Name' },
-              { name: 'Description' },
-              { name: 'Value' }
-            ],
-            rows: Object.entries(outputs).map(
-              ([key, { description, value }]) => [
-                key,
-                description || 'N/A',
-                value
-              ]
-            )
-          })
-        : paragraph('This action does not define any outputs.')
-    ];
+    return MarkdownHelper.createOutputsTable(this.action.outputs);
   }
 
   private getEnvironmentVariables() {
-    const envVars = this.extractEnvironmentVariables();
-    return [
-      h2('Environment Variables'),
-      envVars.length > 0
-        ? table({
-            columns: [{ name: 'Variable' }, { name: 'Description' }],
-            rows: envVars.map(([key, desc]) => [key, desc])
-          })
-        : paragraph('This action does not require any environment variables.')
-    ];
+    return MarkdownHelper.createEnvironmentVariablesTable(
+      this.extractEnvironmentVariables()
+    );
+  }
+
+  private getDependencies() {
+    return MarkdownHelper.createDependenciesSection();
+  }
+
+  private getRunsDetails() {
+    return MarkdownHelper.createRunsDetailsSection(this.action.runs);
+  }
+
+  private getExampleUsage() {
+    return MarkdownHelper.createExampleUsageSection(
+      this.action.name,
+      this.action.inputs
+    );
+  }
+
+  private getFooter() {
+    return MarkdownHelper.createAcknowledgmentSection();
   }
 
   private extractEnvironmentVariables(): [string, string][] {
     const envVars: [string, string][] = [];
-
-    switch (this.action.runs.using) {
-      /**
-       * Checks if the action is using a composite run strategy and extracts
-       * environment variables from the composite run strategy.
-       */
-      case CompositeRun:
-        this.action.runs.steps.forEach((step) => {
-          if (step.env) {
-            Object.entries(step.env).forEach(([key]) => {
-              envVars.push([
-                key,
-                `Used in step: ${step.name || 'Unnamed Step'}`
-              ]);
-            });
-          }
-        });
-        return envVars;
-
-      /**
-       * Checks if the action is using Docker run strategy and extracts
-       * environment variables from the Docker run strategy.
-       */
-      case DockerRun:
-        return this.action.runs.env
-          ? Object.entries(this.action.runs.env).map(([key]) => [
-              key,
-              'Docker environment variable'
-            ])
-          : [];
-
-      /**
-       * The Node run strategy is not supported in this action. It does
-       * not support Node.js environments for running actions.
-       */
-      default:
-        return envVars;
-    }
-  }
-
-  private getDependencies() {
-    return [
-      h2('Dependencies'),
-      paragraph(
-        'This section provides a graph of dependencies relevant to this action.'
-      ),
-      codeblock(
-        [
-          'dependencies:',
-          '- GitHub Actions Runner',
-          '- Specific environment variables',
-          '- Required files and configurations'
-        ].join('\n'),
-        { language: 'yaml' }
-      )
-    ];
-  }
-
-  private getRunsDetails() {
     const { runs } = this.action;
-    return [
-      h2('Runs'),
-      paragraph(`**Execution Type:** ${runs.using}`),
-      this.getRunTypeDetails(runs)
-    ];
-  }
 
-  private getRunTypeDetails(runs: Runs) {
     switch (runs.using) {
       case CompositeRun:
-        return [
-          paragraph('This is a composite action composed of multiple steps.'),
-          ol(
-            runs.steps.map((step) => [
-              `- **Step ID:** ${step.id || 'N/A'}\n`,
-              `- **Run Command:** ${step.run || 'N/A'}\n`,
-              `- **Shell:** ${step.shell || 'N/A'}\n`
-            ])
-          )
-        ];
-
-      case NodeVersion.NODE18:
-      case NodeVersion.NODE20:
-      case NodeVersion.NODE22:
-        return [
-          paragraph('This is a Node.js-based action.'),
-          ul(
-            [
-              `- **Entry Point:** ${text(runs.main)}`,
-              runs.pre ? `- **Pre Script:** ${text(runs.pre)}` : '',
-              runs.post ? `- **Post Script:** ${text(runs.post)}` : ''
-            ].filter(Boolean)
-          )
-        ];
-
+        runs.steps.forEach((step) => {
+          if (!step.env) {
+            return;
+          }
+          Object.entries(step.env).forEach(([key]) => {
+            envVars.push([
+              key,
+              ['Used in step:', step.name || 'Unnamed Step'].join(' ')
+            ]);
+          });
+        });
+        break;
       case DockerRun:
-        return [
-          paragraph('This is a Docker-based action.'),
-          ul(
-            [
-              `- **Docker Image:** ${text(runs.image)}`,
-              runs.entrypoint
-                ? `- **Entrypoint:** ${text(runs.entrypoint)}`
-                : '',
-              runs.args ? `- **Arguments:** ${runs.args.join(', ')}` : ''
-            ].filter(Boolean)
-          )
-        ];
-
-      default:
-        return paragraph(
-          'This action uses an unrecognized runtime configuration.'
-        );
+        if (runs.env) {
+          Object.entries(runs.env).forEach(([key]) => {
+            envVars.push([key, 'Docker environment variable']);
+          });
+        }
+        break;
     }
-  }
 
-  private getExampleUsage() {
-    return [
-      h2('Example Usage'),
-      codeblock(
-        [
-          'jobs:',
-          '  example:',
-          '    runs-on: ubuntu-latest',
-          '    steps:',
-          '      - uses: actions/checkout@v2',
-          `      - name: Run ${this.action.name}`,
-          '        uses: ./',
-          '        with:',
-          ...Object.keys(this.action.inputs || {}).map(
-            (input) => `          ${input}: <value>`
-          )
-        ].join('\n'),
-        { language: 'yaml' }
-      )
-    ];
-  }
-
-  private getFooter() {
-    return paragraph(
-      `*This documentation was automatically generated from the \`action.yml\` definition.*`
-    );
+    return envVars;
   }
 }

@@ -1,6 +1,7 @@
 import { z } from 'zod';
-import { OutputEntrySchema } from './output-entry.schema.js';
+
 import { validKeyRegex } from './constants.js';
+import { OutputEntrySchema } from './output-entry.schema.js';
 
 const message = `Every output key must match the pattern ${validKeyRegex.source}`;
 

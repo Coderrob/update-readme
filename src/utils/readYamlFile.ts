@@ -1,5 +1,6 @@
-import * as yaml from 'js-yaml';
 import { readFile } from 'fs/promises';
+import * as yaml from 'js-yaml';
+
 import { DEFAULT_BUFFER_ENCODING } from './constants.js';
 
 type Document = Record<string, unknown>;

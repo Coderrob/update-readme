@@ -1,4 +1,5 @@
 import { z } from 'zod';
+
 import { NodeVersion } from '../../types/node-version.js';
 
 /**
