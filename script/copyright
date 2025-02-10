@@ -1,6 +1,12 @@
 #!/bin/bash
 
-set -euo pipefail  # Ensure strict error handling
+# Exit early
+# See: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#The-Set-Builtin
+set -e
+
+# About: This script updates copyright notices in files.
+# Usage: ./script/copyright <directory>
+
 
 # Define the copyright notice
 readonly COPYRIGHT_NOTICE="
@@ -56,7 +62,7 @@ get_comment_style() {
   local file="$1"
   local ext="${file##*.}"
 
-  echo "${COMMENT_STYLES[$ext]:-}"
+  echo -e "${COMMENT_STYLES[$ext]:-}"
 }
 
 # Function to format the copyright notice with the correct comment style
@@ -64,10 +70,10 @@ format_copyright_notice() {
   local style="$1"
   
   if [[ "$style" == "/*" ]]; then
-    echo "/*$COPYRIGHT_NOTICE */
+    echo -e "/*$COPYRIGHT_NOTICE */
 "
   else
-    echo "${COPYRIGHT_NOTICE//^/$style}" | sed 's/^/$/'
+    echo -e "${COPYRIGHT_NOTICE//^/$style}" | sed 's/^/$/'
   fi
 }
 
@@ -87,9 +93,9 @@ prepend_copyright() {
   formatted_notice=$(format_copyright_notice "$comment_style")
 
   # Prepend the copyright notice
-  { echo "$formatted_notice"; cat "$file"; } > temp_file && mv temp_file "$file"
+  { echo -e "$formatted_notice"; cat "$file"; } > temp_file && mv temp_file "$file"
 
-  echo "Updated: $file"
+  echo -e "Updated: $file"
 }
 
 # Main function to scan a directory and update files
@@ -98,7 +104,7 @@ scan_directory() {
   
   find "$dir" -type f | while read -r file; do
     # Skip ignored files and directories
-    echo "checking $file"
+    echo -e "checking $file"
     should_ignore_file "$file" || prepend_copyright "$file"
   done
 }
@@ -106,6 +112,6 @@ scan_directory() {
 # Ensure a directory argument is provided
 [[ $# -ne 1 ]] && { echo "Usage: $0 <directory>"; exit 1; }
 
-echo "Processing..."
+echo -e "Processing..."
 scan_directory "$1"
-echo "Processing complete."
+echo -e "Processing complete."
