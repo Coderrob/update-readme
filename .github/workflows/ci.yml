@@ -39,15 +39,15 @@ jobs:
           cache: npm
 
       - name: Install Dependencies
-        id: npm-ci
-        run: npm ci
+        id: install-dependencies
+        run: npm install
 
       - name: Style Check
-        id: npm-format-check
+        id: style-check
         run: npm run format:check
 
       - name: Lint Check
-        id: npm-lint
+        id: lint-check
         run: npm run lint
 
       - name: Lint Codebase
@@ -67,8 +67,8 @@ jobs:
           VALIDATE_TYPESCRIPT_STANDARD: false
 
       - name: Unit Tests
-        id: npm-ci-test
-        run: npm run ci-test
+        id: unit-test
+        run: npm run test
 
   integration-test:
     name: Integration Testing
@@ -80,7 +80,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Integration Test
-        id: test-action
+        id: integration-test
         uses: ./
         with:
           action-file-path: ./action.yml
