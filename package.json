@@ -54,7 +54,7 @@
     "readme",
     "automation"
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "name": "update-action-readme",
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "*"
