@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { CompositeRun } from '../../types/run-types.js';
+import { CompositeRun } from '../../types.js';
 import { CompositeStepSchema } from './composite-step.schema.js';
 
 /**

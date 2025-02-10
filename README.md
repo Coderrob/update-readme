@@ -1,9 +1,6 @@
 # Update README with Action Metadata
 
-Updates a README.md file with metadata from an action's YAML configuration file.
-This includes information such as the action name, description, inputs, outputs,
-and other relevant details. This ensures that the README is always up-to-date
-with the latest information about the action.
+Updates a README.md file with metadata from an action's YAML configuration file. This includes information such as the action name, description, inputs, outputs, and other relevant details. This ensures that the README is always up-to-date with the latest information about the action.
 
 ## Branding
 
@@ -14,10 +11,10 @@ with the latest information about the action.
 
 ## Inputs
 
-| Name             | Description                                                                                                                                     | Default    | Required | Deprecation |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | -------- | ----------- |
-| readme-file-path | The path to the README.md file that should be updated. This is relative to the repository root. If not specified, it defaults to 'README.md'.   | README.md  | ❌ No    | -           |
-| action-yaml-path | The path to the YAML configuration file for the action. This is relative to the repository root. If not specified, it defaults to 'action.yml'. | action.yml | ❌ No    | -           |
+| Name             | Description                                                                                                                                     | Default      | Required | Deprecation |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------- | ----------- |
+| readme-file-path | The path to the README.md file that should be updated. This is relative to the repository root. If not specified, it defaults to 'README.md'.   | ./README.md  | ✅ Yes    | -           |
+| action-file-path | The path to the YAML configuration file for the action. This is relative to the repository root. If not specified, it defaults to 'action.yml'. | ./action.yml | ✅ Yes    | -           |
 
 ## Outputs
 
@@ -53,9 +50,8 @@ This action uses a Node.js runtime configuration.
             uses: ./
             with:
               readme-file-path: <value>
-              action-yaml-path: <value>
+              action-file-path: <value>
 
 ## Acknowledgments
 
-This project leverages markdown generation techniques from
-[coderrob.com](https://coderrob.com), developed by **Robert Lindley**.
+This project leverages markdown generation techniques from [coderrob.com](https://coderrob.com), developed by **Robert Lindley**.

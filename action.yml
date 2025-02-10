@@ -15,16 +15,16 @@ inputs:
     description:
       The path to the README.md file that should be updated. This is relative to
       the repository root. If not specified, it defaults to 'README.md'.
-    required: false
-    default: 'README.md'
+    required: true
+    default: './README.md'
 
-  action-yaml-path:
+  action-file-path:
     description:
       The path to the YAML configuration file for the action. This is relative
       to the repository root. If not specified, it defaults to 'action.yml'.
-    required: false
-    default: 'action.yml'
+    required: true
+    default: './action.yml'
 
 runs:
   using: 'node20'
-  main: './dist/index.js'
+  main: './dist/index.mjs'
