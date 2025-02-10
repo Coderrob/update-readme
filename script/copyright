@@ -7,7 +7,6 @@ set -e
 # About: This script updates copyright notices in files.
 # Usage: ./script/copyright <directory>
 
-
 # Define the copyright notice
 readonly COPYRIGHT_NOTICE="
  * Copyright 2025 Robert Lindley
@@ -28,20 +27,20 @@ readonly COPYRIGHT_NOTICE="
 
 # Define supported extensions and their comment styles
 declare -A COMMENT_STYLES=(
-    ["sh"]="#"
-    ["py"]="#"
-    ["js"]="/*"
-    ["ts"]="/*"
-    ["java"]="/*"
-    ["cpp"]="/*"
-    ["hpp"]="/*"
-    ["c"]="/*"
-    ["h"]="/*"
-    ["cs"]="/*"
-    ["go"]="/*"
-    ["swift"]="/*"
-    ["php"]="/*"
-    ["rb"]="#"
+  ["sh"]="#"
+  ["py"]="#"
+  ["js"]="/*"
+  ["ts"]="/*"
+  ["java"]="/*"
+  ["cpp"]="/*"
+  ["hpp"]="/*"
+  ["c"]="/*"
+  ["h"]="/*"
+  ["cs"]="/*"
+  ["go"]="/*"
+  ["swift"]="/*"
+  ["php"]="/*"
+  ["rb"]="#"
 )
 
 # Function to check if a file should be ignored
@@ -68,7 +67,7 @@ get_comment_style() {
 # Function to format the copyright notice with the correct comment style
 format_copyright_notice() {
   local style="$1"
-  
+
   if [[ "$style" == "/*" ]]; then
     echo -e "/*$COPYRIGHT_NOTICE */
 "
@@ -93,7 +92,10 @@ prepend_copyright() {
   formatted_notice=$(format_copyright_notice "$comment_style")
 
   # Prepend the copyright notice
-  { echo -e "$formatted_notice"; cat "$file"; } > temp_file && mv temp_file "$file"
+  {
+    echo -e "$formatted_notice"
+    cat "$file"
+  } >temp_file && mv temp_file "$file"
 
   echo -e "Updated: $file"
 }
@@ -101,7 +103,7 @@ prepend_copyright() {
 # Main function to scan a directory and update files
 scan_directory() {
   local dir="$1"
-  
+
   find "$dir" -type f | while read -r file; do
     # Skip ignored files and directories
     echo -e "checking $file"
@@ -110,7 +112,10 @@ scan_directory() {
 }
 
 # Ensure a directory argument is provided
-[[ $# -ne 1 ]] && { echo "Usage: $0 <directory>"; exit 1; }
+[[ $# -ne 1 ]] && {
+  echo "Usage: $0 <directory>"
+  exit 1
+}
 
 echo -e "Processing..."
 scan_directory "$1"
