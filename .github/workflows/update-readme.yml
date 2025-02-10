@@ -8,6 +8,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.ref }}-${{ github.job }}
+  cancel-in-progress: true
+
 defaults:
   run:
     shell: bash
@@ -27,11 +31,11 @@ jobs:
       - name: Update README
         uses: coderrob/update-action-readme@main
         with:
-          action-yaml-path: 'action.yml'
-          readme-file-path: 'README.md'
+          action-file-path: ./action.yml
+          readme-file-path: ./README.md
 
       - name: Upload README
         uses: actions/upload-artifact@v4
         with:
           name: Update Readme with latest version of the action.
-          path: README.md
+          path: ./README.md
