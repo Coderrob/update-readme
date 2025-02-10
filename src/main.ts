@@ -1,14 +1,19 @@
 import * as core from '@actions/core';
 
-import { DocumentationService } from './documentation-service.js';
-import { ACTION_FILE_PATH, README_FILE_PATH } from './utils/constants.js';
+import { ActionDocGenerator } from './services/action-doc-generator.js';
+import { Input } from './types.js';
 import { isError } from './utils/guards.js';
 
 export async function run(
-  actionYamlPath = ACTION_FILE_PATH,
-  readmeFilePath = README_FILE_PATH
+  actionYamlPath = core.getInput(Input.ACTION_YAML_PATH, {
+    required: true,
+    trimWhitespace: true
+  }),
+  readmeFilePath = core.getInput(Input.README_FILE_PATH, {
+    trimWhitespace: true
+  })
 ): Promise<void> {
-  await DocumentationService.load(actionYamlPath)
+  await ActionDocGenerator.load(actionYamlPath)
     .then((service) => service.validate())
     .then((service) => service.save(readmeFilePath))
     .catch((error: Error) => {

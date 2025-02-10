@@ -1,24 +1,28 @@
 // See: https://jestjs.io/docs/configuration
 
-/** @type {import('ts-jest').JestConfigWithTsJest} **/
+/** @type {import('@jest/types').Config.InitialOptions} **/
 export default {
   clearMocks: true,
   collectCoverage: true,
   collectCoverageFrom: ['./src/**'],
   coverageDirectory: './coverage',
-  coveragePathIgnorePatterns: ['/node_modules/', '/dist/', '/__mocks__/'],
+  coveragePathIgnorePatterns: [
+    '__mocks__',
+    '/node_modules/',
+    '/dist/',
+    'src/schema/'
+  ],
   coverageReporters: ['json-summary', 'text', 'lcov'],
-  // coverageThreshold: {
-  //   global: {
-  //     branches: 100,
-  //     functions: 100,
-  //     lines: 100,
-  //     statements: 100
-  //   }
-  // },
+  coverageThreshold: {
+    global: {
+      branches: 36,
+      functions: 27,
+      lines: 48,
+      statements: 45
+    }
+  },
   extensionsToTreatAsEsm: ['.ts'],
   moduleFileExtensions: ['ts', 'js'],
-  moduleDirectories: ['<rootDir>/src', '<rootDir>/node_modules'],
   preset: 'ts-jest',
   reporters: ['default'],
   resolver: 'ts-jest-resolver',
@@ -27,9 +31,17 @@ export default {
     '<rootDir>/tsconfig.eslint.json'
   ],
   testEnvironment: 'node',
-  testMatch: ['**/*.test.ts'],
-  testPathIgnorePatterns: ['/dist/', '/node_modules/'],
-  transform: { '^.+\\.ts$': ['ts-jest', { useESM: true }] },
+  testMatch: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(spec|test).ts?(x)'],
+  testPathIgnorePatterns: ['/dist/', '/node_modules/', '__mocks__'],
+  transform: {
+    '^.+\\.ts$': [
+      'ts-jest',
+      {
+        tsconfig: 'tsconfig.eslint.json',
+        useESM: true
+      }
+    ]
+  },
   transformIgnorePatterns: [
     'node_modules/(?!@jest/)',
     '.*\\.(spec|test)\\.(js|jsx)$'

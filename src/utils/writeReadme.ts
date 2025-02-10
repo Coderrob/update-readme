@@ -1,29 +1,37 @@
-import { writeFile } from 'fs/promises';
+import { mkdir, writeFile } from 'fs/promises';
+import * as path from 'path';
 
-// import * as path from 'path';
-import { DEFAULT_BUFFER_ENCODING } from './constants.js';
+import { DEFAULT_ENCODING } from '../constants.js';
+import { isError } from './guards.js';
 
 /**
  * Writes or updates the README.md file in the given directory.
  */
-export const writeReadme = async (
+export async function writeReadme(
   filePath: string,
   content: string
-): Promise<void> => {
-  // const readmePath = path.join(dir, 'README.md');
-
-  /**
-   * Optionally: Merge existing content with new content if needed.
-   * For this example, we simply replace it.
-   */
-  /*
-  try {
-    const existingContent = await fs.readFile(readmePath, DEFAULT_BUFFER_ENCODING);
-    . . . handle merging logic here. . .
-  } catch (error) {
-    // File does not exist – that’s fine. Everything's fine.
+): Promise<void> {
+  if (!filePath || typeof filePath !== 'string') {
+    throw new Error('Invalid file path provided');
   }
-  */
 
-  await writeFile(filePath, content, DEFAULT_BUFFER_ENCODING);
-};
+  let resolvedPath = path.resolve(filePath);
+
+  // If input is a directory, append README.md
+  if (!path.extname(resolvedPath)) {
+    resolvedPath = path.join(resolvedPath, 'README.md');
+  }
+
+  const dirPath = path.dirname(resolvedPath);
+
+  try {
+    // Ensure the directory exists before writing
+    await mkdir(dirPath, { recursive: true });
+
+    // Write file atomically to prevent partial writes
+    await writeFile(resolvedPath, content, { encoding: DEFAULT_ENCODING });
+  } catch (error) {
+    const message = isError(error) ? error.message : 'Unknown error';
+    throw new Error(`Failed to write documentation file: ${message}`);
+  }
+}

@@ -1,13 +1,11 @@
 import { codeblock, header, p as paragraph, table, ul } from 'ts-markdown';
 
 import { Branding } from '../schema/branding.js';
+import { CompositeStep } from '../schema/index.js';
 import { Inputs } from '../schema/inputs.js';
 import { Outputs } from '../schema/outputs.js';
 import { Runs } from '../schema/runs.js';
-import { NodeVersion } from '../types/node-version.js';
-import { CompositeRun, DockerRun } from '../types/run-types.js';
-
-/** Helper class for Markdown utilities */
+import { CompositeRun, DockerRun } from '../types.js';
 
 export class MarkdownHelper {
   static createBrandingTable(branding?: Branding) {
@@ -114,7 +112,7 @@ export class MarkdownHelper {
           paragraph('This is a composite action composed of multiple steps.'),
           ul(
             runs.steps.map(
-              (step) =>
+              (step: CompositeStep) =>
                 `- **Step ID:** ${step.id || 'N/A'}\n  - **Run Command:** ${step.run || 'N/A'}\n  - **Shell:** ${step.shell || 'N/A'}`
             )
           )

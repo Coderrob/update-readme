@@ -76,7 +76,7 @@
     "lint:fix": "npm run format && npx eslint . --fix",
     "package": "npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "package:watch": "npm run package -- --watch",
-    "test": "npx jest"
+    "test": "cross-env npx jest"
   },
   "type": "module",
   "version": "1.1.1"

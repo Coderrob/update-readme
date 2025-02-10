@@ -2,20 +2,21 @@ import { header, p as paragraph, tsMarkdown } from 'ts-markdown';
 
 import * as core from '@actions/core';
 
-import { Action } from './schema/action.js';
-import { ActionSchema } from './schema/action.schema.js';
-import { CompositeRun, DockerRun } from './types/run-types.js';
-import { MarkdownHelper } from './utils/markdown.js';
-import { readYamlFile } from './utils/readYamlFile.js';
-import { writeReadme } from './utils/writeReadme.js';
+import { Action } from '../schema/action.js';
+import { ActionSchema } from '../schema/action.schema.js';
+import { CompositeStep } from '../schema/index.js';
+import { CompositeRun, DockerRun } from '../types.js';
+import { MarkdownHelper } from '../utils/markdown.js';
+import { readYamlFile } from '../utils/readYamlFile.js';
+import { writeReadme } from '../utils/writeReadme.js';
 
-export class DocumentationService {
+export class ActionDocGenerator {
   private constructor(private readonly action: Action) {}
 
   /** Factory method to create an instance from an action YAML file */
-  static async load(actionFilePath: string): Promise<DocumentationService> {
+  static async load(actionFilePath: string): Promise<ActionDocGenerator> {
     const action: Action = await readYamlFile(actionFilePath);
-    return new DocumentationService(action);
+    return new ActionDocGenerator(action);
   }
 
   /** Validates the action against the schema */
@@ -116,7 +117,7 @@ export class DocumentationService {
 
     switch (runs.using) {
       case CompositeRun:
-        runs.steps.forEach((step) => {
+        runs.steps.forEach((step: CompositeStep) => {
           if (!step.env) {
             return;
           }

@@ -14,7 +14,7 @@
     "newLine": "lf",
     "noImplicitAny": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": false,
+    "noUnusedParameters": true,
     "outDir": "./dist",
     "pretty": true,
     "resolveJsonModule": true,
@@ -25,11 +25,12 @@
     "useUnknownInCatchVariables": true
   },
   "exclude": [
-    "/__mocks__/",
-    "<rootDir>/__tests__",
-    "<rootDir>/coverage",
-    "<rootDir>/node_modules",
-    "dist"
+    "__tests__",
+    "__mocks__",
+    "coverage",
+    "dist",
+    "node_modules",
+    "**/*.(spec|test).(j|t)s"
   ],
-  "include": ["src/**/*"]
+  "include": ["src"]
 }
