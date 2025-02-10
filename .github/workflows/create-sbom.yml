@@ -10,6 +10,8 @@ concurrency:
   group: ${{ github.ref }}-${{ github.job }}
   cancel-in-progress: true
 
+permissions: {}
+
 defaults:
   run:
     shell: bash
