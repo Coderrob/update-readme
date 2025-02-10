@@ -11,9 +11,14 @@ const config = {
     esModule: true,
     file: 'dist/index.mjs',
     format: 'es',
-    sourcemap: true
+    sourcemap: false
   },
-  plugins: [typescript(), nodeResolve(), commonjs(), terser()]
+  plugins: [
+    typescript({ tsconfig: './tsconfig.json' }),
+    nodeResolve(),
+    commonjs(),
+    terser()
+  ]
 };
 
 export default config;

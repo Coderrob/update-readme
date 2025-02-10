@@ -6,7 +6,7 @@ export default {
   collectCoverage: true,
   collectCoverageFrom: ['./src/**'],
   coverageDirectory: './coverage',
-  coveragePathIgnorePatterns: ['/node_modules/', '/dist/'],
+  coveragePathIgnorePatterns: ['/node_modules/', '/dist/', '/__mocks__/'],
   coverageReporters: ['json-summary', 'text', 'lcov'],
   // coverageThreshold: {
   //   global: {
@@ -18,20 +18,21 @@ export default {
   // },
   extensionsToTreatAsEsm: ['.ts'],
   moduleFileExtensions: ['ts', 'js'],
+  moduleDirectories: ['<rootDir>/src', '<rootDir>/node_modules'],
   preset: 'ts-jest',
   reporters: ['default'],
   resolver: 'ts-jest-resolver',
+  setupFilesAfterEnv: [
+    '<rootDir>/tsconfig.json',
+    '<rootDir>/tsconfig.eslint.json'
+  ],
   testEnvironment: 'node',
   testMatch: ['**/*.test.ts'],
   testPathIgnorePatterns: ['/dist/', '/node_modules/'],
-  transform: {
-    '^.+\\.ts$': [
-      'ts-jest',
-      {
-        tsconfig: 'tsconfig.eslint.json',
-        useESM: true
-      }
-    ]
-  },
+  transform: { '^.+\\.ts$': ['ts-jest', { useESM: true }] },
+  transformIgnorePatterns: [
+    'node_modules/(?!@jest/)',
+    '.*\\.(spec|test)\\.(js|jsx)$'
+  ],
   verbose: true
 };

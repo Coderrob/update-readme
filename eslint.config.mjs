@@ -61,7 +61,7 @@ export default [
       'import/resolver': {
         typescript: {
           alwaysTryTypes: true,
-          project: 'tsconfig.eslint.json'
+          project: 'tsconfig.json'
         }
       }
     },
