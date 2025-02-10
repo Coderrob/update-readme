@@ -171,7 +171,7 @@ export class MarkdownHelper {
       header(2, 'Acknowledgments'),
       paragraph(
         [
-          'This project leverages markdown generation techniques from',
+          'This project leverages Markdown generation techniques from',
           '[coderrob.com](https://coderrob.com), developed by **Robert Lindley**.'
         ].join(' ')
       )

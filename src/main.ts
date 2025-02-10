@@ -15,7 +15,7 @@ export async function run(
         ? error.message
         : `Unknown error ${String(error)}`;
       core.setFailed(
-        `Failed to update README with action metadata: ${message}`
+        `Failed to update README.md file with action metadata: ${message}`
       );
     });
 }

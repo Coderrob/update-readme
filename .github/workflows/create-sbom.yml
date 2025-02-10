@@ -6,6 +6,12 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.ref }}-${{ github.job }}
+  cancel-in-progress: true
+
+permissions: {}
+
 defaults:
   run:
     shell: bash
@@ -24,13 +30,15 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate SBOM
+        id: generate-sbom
         # generation command documentation: https://github.com/microsoft/sbom-tool#sbom-generation
         run: |
-          curl -Lo $RUNNER_TEMP/sbom-tool https://github.com/microsoft/sbom-tool/releases/latest/download/sbom-tool-linux-x64
-          chmod +x $RUNNER_TEMP/sbom-tool
-          $RUNNER_TEMP/sbom-tool generate -b . -bc . -pn $ -pv 1.0.0 -ps coderrob -nsb https://coderrob.com -V Verbose
+          curl -Lo "$RUNNER_TEMP/sbom-tool" "https://github.com/microsoft/sbom-tool/releases/latest/download/sbom-tool-linux-x64"
+          chmod +x "$RUNNER_TEMP/sbom-tool"
+          "$RUNNER_TEMP/sbom-tool" generate -b . -bc . -pn "$PROJECT_NAME" -pv "1.0.0" -ps "coderrob" -nsb "https://coderrob.com" -V "Verbose"
 
       - name: Upload SBOM Artifact
+        id: upload-sbom-artifact
         uses: actions/upload-artifact@v4
         with:
           name: sbom

@@ -1,10 +1,10 @@
 author: 'Robert Lindley'
-name: Update README with Action Metadata
+name: Update README.md with Action Metadata
 description:
   Updates a README.md file with metadata from an action's YAML configuration
   file. This includes information such as the action name, description, inputs,
-  outputs, and other relevant details. This ensures that the README is always
-  up-to-date with the latest information about the action.
+  outputs, and other relevant details. This ensures that the readme file is
+  always up-to-date with the latest information about the action.
 
 branding:
   color: 'green'
