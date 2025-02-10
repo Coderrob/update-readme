@@ -83,4 +83,5 @@ jobs:
         id: test-action
         uses: ./
         with:
-          action-yaml-path: ./action.yml
+          action-file-path: ./action.yml
+          readme-file-path: ./README.md
