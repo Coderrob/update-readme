@@ -5,7 +5,7 @@ import { CompositeStep } from '../schema/index.js';
 import { Inputs } from '../schema/inputs.js';
 import { Outputs } from '../schema/outputs.js';
 import { Runs } from '../schema/runs.js';
-import { CompositeRun, DockerRun } from '../types.js';
+import { CompositeRun, DockerRun, NodeVersion } from '../types.js';
 
 export class MarkdownHelper {
   static createBrandingTable(branding?: Branding) {
@@ -137,7 +137,6 @@ export class MarkdownHelper {
       case NodeVersion.NODE20:
       case NodeVersion.NODE22:
         return [paragraph('This action uses a Node.js runtime configuration.')];
-
       default:
         return [
           paragraph('This action uses an unrecognized runtime configuration.')

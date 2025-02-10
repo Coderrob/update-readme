@@ -3,8 +3,7 @@
  */
 export enum Input {
   README_FILE_PATH = 'readme-file-path',
-  ACTION_YAML_PATH = 'action-yaml-path',
-  TIMEOUT_MINUTES = 'timeout-minutes'
+  ACTION_FILE_PATH = 'action-file-path'
 }
 
 export enum NodeVersion {
