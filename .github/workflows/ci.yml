@@ -22,14 +22,15 @@ permissions:
   statuses: write
 
 jobs:
-  unit-test:
-    name: Unit Testing
+  lint-check:
+    name: Linting
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Source
         id: checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         id: setup-node
@@ -66,11 +67,35 @@ jobs:
           VALIDATE_JSON: false
           VALIDATE_TYPESCRIPT_STANDARD: false
 
+  unit-test:
+    needs: lint-check
+    name: Unit Testing
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source
+        id: checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        id: setup-node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install Dependencies
+        id: install-dependencies
+        run: npm install
+
       - name: Unit Tests
         id: unit-test
         run: npm run test
 
   integration-test:
+    needs:
+      - lint-check
+      - unit-test
     name: Integration Testing
     runs-on: ubuntu-latest
 
