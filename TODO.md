@@ -3,7 +3,7 @@
 The following is a list of tasks that need to be completed. Each task has a
 priority, an estimated time to complete, and a person assigned to it.
 
-### Todo
+## Task List
 
 - [ ] Implement a guard to allow users to specify input file paths with specific
       extensions only.
@@ -19,14 +19,14 @@ priority, an estimated time to complete, and a person assigned to it.
 - [ ] Enforce minimum code coverage requirements to ensure an 85% code coverage
       rate.
 
-- [ ] Add a feature that allows users to specify custom templates for README
+- [ ] Add a feature that allows users to specify custom templates for README.md
       generation.
 
 - [ ] Implement input validation and sanitization across all user inputs.
 
   - [ ] Allow users to specify custom template files or URLs. Enable variable
         replacements in templates using values from the Action metadata. Provide
-        a preview of the generated README before saving.
+        a preview of the generated README.md file before saving.
 
 - [ ] Implement logging with sensitive data redaction.
 
@@ -40,7 +40,7 @@ priority, an estimated time to complete, and a person assigned to it.
 
 - [ ] Add contributor guidelines and code of conduct.
 
-### In Progress
+## In Progress
 
 - [x] Integrate security scanning tools to identify vulnerabilities in
       dependencies.
@@ -51,22 +51,22 @@ priority, an estimated time to complete, and a person assigned to it.
 
 - [ ] Look into moving schema definitions for the Action into a separate
       package. This will help in maintaining consistency and reducing errors
-      related to markdown generation.
+      related to Markdown generation.
 
   - [x] Generated action.schema.json to repository.
   - [ ] Swap Zod with Ajv to validate schema after moving Zod definitions
         outside of the Action repository.
 
-### Done ✓
+## Done ✓
 
 - [x] Add pull request templates for different types of contributions (bug
       fixes, feature requests, etc.).
 
-- [x] Replace string builder approach to README format with a lightweight
+- [x] Replace string builder approach to Markdown format with a lightweight
       template engine.
 
-- [x] Remove the "buy me coffee" link from the generated README file and replace
-      with less flashy "made by [Your Name]" message with a link back to this
-      origin repo.
+- [x] Remove the "buy me coffee" link from the generated README.md file and
+      replace with less flashy "made by [Your Name]" message with a link back to
+      this origin repository.
 
-- [x] Replace hard-coded markdown syntax with ts-markdown or similar library.
+- [x] Replace hardcoded Markdown syntax with ts-markdown or similar library.

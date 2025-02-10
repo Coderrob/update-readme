@@ -3,14 +3,16 @@ name: Update README
 on:
   workflow_dispatch:
   push:
-    paths: |
-      ./action.yml
+    paths:
+      - ./action.yml
     branches:
       - main
 
 concurrency:
   group: ${{ github.ref }}-${{ github.job }}
   cancel-in-progress: true
+
+permissions: {}
 
 defaults:
   run:

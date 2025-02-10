@@ -57,5 +57,5 @@ This action uses a Node.js runtime configuration.
 
 ## Acknowledgments
 
-This project leverages markdown generation techniques from
+This project leverages Markdown generation techniques from
 [coderrob.com](https://coderrob.com), developed by **Robert Lindley**.
