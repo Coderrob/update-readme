@@ -1,9 +1,9 @@
-# Update README with Action Metadata
+# Update README.md with Action Metadata
 
 Updates a README.md file with metadata from an action's YAML configuration file.
 This includes information such as the action name, description, inputs, outputs,
-and other relevant details. This ensures that the README is always up-to-date
-with the latest information about the action.
+and other relevant details. This ensures that the readme file is always
+up-to-date with the latest information about the action.
 
 ## Branding
 
@@ -49,7 +49,7 @@ This action uses a Node.js runtime configuration.
         runs-on: ubuntu-latest
         steps:
           - uses: actions/checkout@v2
-          - name: Run Update README with Action Metadata
+          - name: Run Update README.md with Action Metadata
             uses: ./
             with:
               readme-file-path: <value>

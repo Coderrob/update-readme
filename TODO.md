@@ -1,4 +1,4 @@
-# TODO.md
+# Things to Do
 
 The following is a list of tasks that need to be completed. Each task has a
 priority, an estimated time to complete, and a person assigned to it.
