@@ -18,6 +18,8 @@
 
 import { z } from 'zod';
 
+import { DockerRun } from '../../types.js';
+
 /**
  * Docker action Runs Schema.
  *
@@ -26,13 +28,13 @@ import { z } from 'zod';
 
 export const DockerRunsSchema = z
   .object({
+    using: z.literal(DockerRun),
     'pre-entrypoint': z
       .string()
       .optional()
       .describe(
         'Allows you to run a script before the entrypoint action begins. For example, you can use pre-entrypoint: to run a prerequisite setup script.'
       ),
-    using: z.literal('docker'),
     image: z
       .string()
       .describe(

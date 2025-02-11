@@ -18,9 +18,9 @@
 
 import { z } from 'zod';
 
-import { CompositeRunsSchema } from './runs/composite-runs.schema.js';
-import { DockerRunsSchema } from './runs/docker-runs.schema.js';
-import { NodeRunsSchema } from './runs/node-runs.schema.js';
+import { CompositeRunsSchema } from './composite/composite-runs.schema.js';
+import { DockerRunsSchema } from './docker/docker-runs.schema.js';
+import { NodeRunsSchema } from './node/node-runs.schema.js';
 
 /**
  * Runs schema as a discriminated union using the `using` field.

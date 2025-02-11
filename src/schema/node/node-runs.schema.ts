@@ -19,6 +19,7 @@
 import { z } from 'zod';
 
 import { NodeVersion } from '../../types.js';
+import { requiredString } from '../common/required.js';
 
 /**
  * Node action Runs Schema.
@@ -31,7 +32,9 @@ export const NodeRunsSchema = z
     using: z
       .nativeEnum(NodeVersion)
       .describe('The runtime used to execute the code specified in main.'),
-    main: z.string().describe('The file that contains your action code.'),
+    main: requiredString(
+      'Main file for Node.js actions. This is required for Node.js actions.'
+    ).describe('The file that contains your action code.'),
     pre: z
       .string()
       .optional()
