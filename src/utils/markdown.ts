@@ -18,12 +18,12 @@
 
 import { codeblock, header, p as paragraph, table, ul } from 'ts-markdown';
 
+import { CompositeRun, DockerRun, NodeVersion } from '../types.js';
 import { Branding } from '../schema/branding.js';
-import { CompositeStep } from '../schema/index.js';
 import { Inputs } from '../schema/inputs.js';
 import { Outputs } from '../schema/outputs.js';
 import { Runs } from '../schema/runs.js';
-import { CompositeRun, DockerRun, NodeVersion } from '../types.js';
+import { CompositeStep } from '../schema/composite/composite-step.js';
 
 export class MarkdownHelper {
   static createBrandingTable(branding?: Branding) {
