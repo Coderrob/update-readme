@@ -22,7 +22,7 @@ import * as core from '@actions/core';
 
 import { Action } from '../schema/action.js';
 import { ActionSchema } from '../schema/action.schema.js';
-import { CompositeStep } from '../schema/runs/composite-step.js';
+import { CompositeStep } from '../schema/composite/composite-step.js';
 import { CompositeRun, DockerRun } from '../types.js';
 import { MarkdownHelper } from '../utils/markdown.js';
 import { readYamlFile } from '../utils/readYamlFile.js';

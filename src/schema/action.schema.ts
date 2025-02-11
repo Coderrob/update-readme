@@ -18,6 +18,7 @@
 
 import { z } from 'zod';
 
+import { CompositeRun } from '../types.js';
 import { BrandingSchema } from './branding.schema.js';
 import { InputsSchema } from './inputs.schema.js';
 import { OutputsSchema } from './outputs.schema.js';
@@ -54,4 +55,18 @@ export const ActionSchema = z
       'The method of running the action. This can be a Node version, a composite, or a Docker container.'
     )
   })
-  .strict();
+  .superRefine((schema, ctx) => {
+    const { runs, outputs } = schema;
+    const { using } = runs;
+    if (using === CompositeRun && !!outputs) {
+      Object.entries(outputs).forEach(([key, { value }]) => {
+        if (value) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: `For 'composite', each output key must contain a 'value' field. Missing value for output key '${key}'`,
+            path: ['outputs']
+          });
+        }
+      });
+    }
+  });

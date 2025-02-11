@@ -17,9 +17,10 @@
  */
 
 import * as core from '@actions/core';
+
+import { ACTION_FILE_PATH, README_FILE_PATH } from './constants.js';
 import { run } from './main.js';
 import { Input } from './types.js';
-import { ACTION_FILE_PATH, README_FILE_PATH } from './constants.js';
 
 (async () => {
   await run(
