@@ -1,15 +1,15 @@
 name: Update README
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   push:
-    paths:
-      - ./action.yml
     branches:
       - main
+    paths:
+      - ./action.yml
 
 concurrency:
-  group: ${{ github.ref }}-${{ github.job }}
+  group: readme-${{ github.ref }}-${{ github.job }}
   cancel-in-progress: true
 
 permissions: {}
@@ -23,21 +23,23 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      id-token: write
       contents: write
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Source
+        id: checkout
         uses: actions/checkout@v4
 
       - name: Update README
+        id: update-readme
         uses: coderrob/update-action-readme@main
         with:
           action-file-path: ./action.yml
           readme-file-path: ./README.md
 
-      - name: Upload README
-        uses: actions/upload-artifact@v4
+      - name: Commit and Push README changes
+        id: commit-and-push-readme
+        uses: coderrob/commit-and-push@main
         with:
-          name: Update Readme with latest version of the action.
-          path: ./README.md
+          branch_target: main
+          directory_path: "."
