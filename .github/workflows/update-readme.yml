@@ -42,4 +42,4 @@ jobs:
         uses: coderrob/commit-and-push@main
         with:
           branch_target: main
-          directory_path: "."
+          directory_path: '.'
