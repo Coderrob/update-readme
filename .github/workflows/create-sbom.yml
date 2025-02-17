@@ -1,13 +1,10 @@
 name: Create SBOM
 
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+  workflow_dispatch: {}
 
 concurrency:
-  group: ${{ github.ref }}-${{ github.job }}
+  group: sbom-${{ github.ref }}-${{ github.job }}
   cancel-in-progress: true
 
 permissions: {}

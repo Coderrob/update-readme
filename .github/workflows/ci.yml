@@ -7,13 +7,16 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'badges/**'
+      - '*.md'
 
 defaults:
   run:
     shell: bash
 
 concurrency:
-  group: ${{ github.ref }}-${{ github.job }}
+  group: ci-${{ github.ref }}-${{ github.job }}
   cancel-in-progress: true
 
 permissions:
@@ -41,7 +44,7 @@ jobs:
 
       - name: Install Dependencies
         id: install-dependencies
-        run: npm install
+        run: npm ci
 
       - name: Style Check
         id: style-check
