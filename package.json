@@ -9,7 +9,7 @@
     "ts-markdown": "^1.2.0",
     "zod": "^3.24.1"
   },
-  "description": "A GitHub Action to update the README.md file with the latest version of a package.",
+  "description": "A GitHub Action to update the README.md file with the latest version information from the action.yml.",
   "devDependencies": {
     "@eslint/compat": "^1.2.6",
     "@jest/globals": "^29.7.0",
@@ -54,7 +54,7 @@
     "automation"
   ],
   "license": "Apache-2.0",
-  "name": "update-action-readme",
+  "name": "@coderrob/update-action-readme",
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
   "private": true,
   "repository": {
