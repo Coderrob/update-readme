@@ -16,21 +16,14 @@
  *
  */
 
-import * as core from '@actions/core';
-
-import { ACTION_FILE_PATH, README_FILE_PATH } from './constants.js';
-import { run } from './main.js';
+import { UpdateReadmeAction } from './action.js';
+import { getInputValue } from './inputs.js';
 import { Input } from './types.js';
 
 (async () => {
-  await run(
-    core.getInput(Input.ACTION_FILE_PATH, {
-      required: true,
-      trimWhitespace: true
-    }) || ACTION_FILE_PATH,
-    core.getInput(Input.README_FILE_PATH, {
-      required: true,
-      trimWhitespace: true
-    }) || README_FILE_PATH
-  );
+  await new UpdateReadmeAction({
+    [Input.ACTION_FILE_PATH]: getInputValue[Input.ACTION_FILE_PATH],
+    [Input.README_FILE_PATH]: getInputValue[Input.README_FILE_PATH],
+    [Input.ACTION_REPOSITORY]: getInputValue[Input.ACTION_REPOSITORY]
+  }).execute();
 })();

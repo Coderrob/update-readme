@@ -17,4 +17,6 @@
  */
 
 export * from './guards.js';
-export * from './markdown.js';
+export * from './plant-uml-generator.js';
+export * from './readme-generator.js';
+export * from './svg-generator.js';

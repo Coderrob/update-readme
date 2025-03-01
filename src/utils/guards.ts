@@ -16,6 +16,46 @@
  *
  */
 
+import { CompositeRuns } from '../schema/composite/composite-runs.js';
+import { Runs } from '../schema/runs.js';
+import { CompositeRun } from '../types.js';
+
+/**
+ * Checks if the provided error is an instance of Error.
+ * @param error - The error to check.
+ * @returns true if the provided error is an instance of Error; false otherwise.
+ */
 export function isError(error: unknown): error is Error {
   return error instanceof Error;
+}
+
+/**
+ * Checks if the provided value is a true boolean,
+ * a string "true" (case-insensitive), or maybe it's mayboolean...
+ * @param value - The value to check.
+ * @returns true if the value is a true boolean or a string "true" (case-insensitive); false otherwise.
+ */
+export function isTrue(value: unknown): value is boolean {
+  // Check for trueBool ahead...
+  const trueBool = typeof value === 'boolean' && value === true;
+  const trueStr = typeof value === 'string' && value.toLowerCase() === 'true';
+  return trueBool || trueStr;
+}
+
+/**
+ * Checks if the provided value is a number.
+ * @param value - The value to check.
+ * @returns true if the value is a number; false otherwise.
+ */
+export function isString(value: unknown): value is string {
+  return typeof value === 'string';
+}
+
+/**
+ * Checks if the provided value is a number.
+ * @param runs - The runs to check.
+ * @returns true if the runs are composite; false otherwise.
+ */
+export function isCompositeRun(runs: Runs): runs is CompositeRuns {
+  return runs.using === CompositeRun;
 }
