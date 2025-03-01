@@ -19,7 +19,8 @@ defaults:
     shell: bash
 
 jobs:
-  update-readme:
+  update-copyright:
+    name: Update Copyright
     runs-on: ubuntu-latest
 
     permissions:
@@ -30,15 +31,15 @@ jobs:
         id: checkout
         uses: actions/checkout@v4
 
-      - name: Update README
-        id: update-readme
+      - name: Update Copyright
+        id: update-copyright
         uses: Coderrob/add-copyright@v1
         with:
           name: 'Robert Lindley'
           license: apache-2.0
 
-      - name: Commit and Push README changes
-        id: commit-and-push-readme
+      - name: Commit and Push changes
+        id: commit-and-push-changes
         uses: coderrob/commit-and-push@v1
         with:
           branch: copyright
