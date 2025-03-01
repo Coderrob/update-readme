@@ -2,8 +2,7 @@
 
 Updates a README.md file with metadata from an action's YAML configuration file.
 This includes information such as the action name, description, inputs, outputs,
-and other relevant details. This ensures that the readme file is always
-up-to-date with the latest information about the action.
+and other relevant details.
 
 ## Branding
 
@@ -14,33 +13,19 @@ up-to-date with the latest information about the action.
 
 ## Inputs
 
-| Name             | Description                                                                                                                                     | Default      | Required | Deprecation |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------- | ----------- |
-| readme-file-path | The path to the README.md file that should be updated. This is relative to the repository root. If not specified, it defaults to 'README.md'.   | ./README.md  | ✅ Yes   | -           |
-| action-file-path | The path to the YAML configuration file for the action. This is relative to the repository root. If not specified, it defaults to 'action.yml'. | ./action.yml | ✅ Yes   | -           |
+| Name              | Description                                                                                                                                     | Default                         | Required |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- | -------- |
+| action-file-path  | The path to the YAML configuration file for the action. This is relative to the repository root. If not specified, it defaults to 'action.yml'. | ./action.yml                    | ✅ Yes   |
+| action-repository | The repository where the action is located. This is used to generate links and references within the README.md file.                            | ${{ github.action_repository }} | ❌ No    |
+| readme-file-path  | The path to the README.md file that should be updated. This is relative to the repository root. If not specified, it defaults to 'README.md'.   | ./README.md                     | ✅ Yes   |
 
 ## Outputs
 
 This action does not define any outputs.
 
-## Environment Variables
-
-This action does not require any environment variables.
-
-## Dependencies
-
-This section provides a graph of dependencies relevant to this action.
-
-    dependencies:
-    - GitHub Actions Runner
-    - Specific environment variables
-    - Required files and configurations
-
 ## Runs
 
 **Execution Type:** node20
-
-This action uses a Node.js runtime configuration.
 
 ## Example Usage
 
@@ -48,12 +33,15 @@ This action uses a Node.js runtime configuration.
       example:
         runs-on: ubuntu-latest
         steps:
-          - uses: actions/checkout@v2
+          - name: Checkout Source
+            uses: actions/checkout@v2
+
           - name: Run Update README.md with Action Metadata
-            uses: ./
+            uses: Coderrob/update-action-readme@main
             with:
-              readme-file-path: <value>
               action-file-path: <value>
+              action-repository: <value>
+              readme-file-path: <value>
 
 ## Acknowledgments
 

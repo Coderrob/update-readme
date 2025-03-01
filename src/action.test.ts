@@ -17,23 +17,24 @@
  */
 
 import * as core from '@actions/core';
+import { jest } from '@jest/globals';
 
-import { ActionDocGenerator } from './services/action-doc-generator.js';
-import { isError } from './utils/guards.js';
+import { UpdateReadmeAction } from './action.js';
+import { ACTION_FILE_PATH, README_FILE_PATH } from './constants.js';
+import { Input } from './types.js';
 
-export async function run(
-  actionYamlPath: string,
-  readmeFilePath: string
-): Promise<void> {
-  await ActionDocGenerator.load(actionYamlPath)
-    .then((service) => service.validate())
-    .then((service) => service.save(readmeFilePath))
-    .catch((error: Error) => {
-      const message = isError(error)
-        ? error.message
-        : `Unknown error ${String(error)}`;
-      core.setFailed(
-        `Failed to update README.md file with action metadata: ${message}`
-      );
-    });
-}
+jest.mock('@actions/core');
+
+describe('main', () => {
+  afterEach(jest.clearAllMocks);
+
+  it('should create a new README.md file for an action.yml file', async () => {
+    await new UpdateReadmeAction({
+      [Input.ACTION_FILE_PATH]: ACTION_FILE_PATH,
+      [Input.README_FILE_PATH]: README_FILE_PATH,
+      [Input.ACTION_REPOSITORY]: 'Coderrob/update-action-readme'
+    }).execute();
+
+    expect(core.setFailed).not.toHaveBeenCalled();
+  });
+});

@@ -39,7 +39,7 @@ jobs:
 
       - name: Commit and Push README changes
         id: commit-and-push-readme
-        uses: coderrob/commit-and-push@main
+        uses: coderrob/commit-and-push@v1
         with:
-          branch_target: main
-          directory_path: '.'
+          branch: main
+          directory-path: '.'

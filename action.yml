@@ -3,8 +3,7 @@ name: Update README.md with Action Metadata
 description:
   Updates a README.md file with metadata from an action's YAML configuration
   file. This includes information such as the action name, description, inputs,
-  outputs, and other relevant details. This ensures that the readme file is
-  always up-to-date with the latest information about the action.
+  outputs, and other relevant details.
 
 branding:
   color: 'green'
@@ -25,6 +24,14 @@ inputs:
     required: true
     default: './action.yml'
 
+  action-repository:
+    description:
+      The repository where the action is located. This is used to generate links
+      and references within the README.md file.
+    required: false
+    default: '${{ github.action_repository }}'
+
+outputs: {}
 runs:
   using: 'node20'
   main: './dist/index.mjs'

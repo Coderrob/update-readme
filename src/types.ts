@@ -21,7 +21,29 @@
  */
 export enum Input {
   README_FILE_PATH = 'readme-file-path',
-  ACTION_FILE_PATH = 'action-file-path'
+  ACTION_FILE_PATH = 'action-file-path',
+  ACTION_REPOSITORY = 'action-repository'
+}
+
+export type InputEntry = IEntry<Input>;
+
+/**
+ *  InputEntry interface definition
+ */
+export interface IEntry<T> {
+  id: T;
+  default: string;
+  deprecationMessage: string;
+  description: string;
+  required: boolean;
+  value?: string;
+}
+
+/**
+ * Execute interface definition
+ */
+export interface IExecute {
+  execute(): Promise<void>;
 }
 
 export enum NodeVersion {
@@ -35,3 +57,7 @@ export const CompositeRun = 'composite';
 export const DockerRun = 'docker';
 
 export type RunType = typeof CompositeRun | typeof DockerRun | `${NodeVersion}`;
+
+export interface Renderer {
+  render(): Promise<string>;
+}
