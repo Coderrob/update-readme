@@ -27,7 +27,7 @@ inputs:
   action-repository:
     description:
       The repository where the action is located. This is used to generate links
-      and references within the README.
+      and references within the README.md file.
     required: false
     default: '${{ github.action_repository }}'
 
