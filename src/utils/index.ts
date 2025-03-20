@@ -17,7 +17,6 @@
  */
 
 export * from './guards.js';
-export * from './logger.js';
 export * from './mermaid-flowchart-generator.js';
 export * from './read-yaml-file.js';
 export * from './readme-generator.js';

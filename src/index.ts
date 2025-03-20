@@ -17,13 +17,13 @@
  */
 
 import { UpdateReadmeAction } from './action.js';
-import { getInputValue } from './inputs.js';
+import { getInput } from './inputs.js';
 import { Input } from './types.js';
 
 (async () => {
   await new UpdateReadmeAction({
-    [Input.ACTION_FILE_PATH]: getInputValue[Input.ACTION_FILE_PATH],
-    [Input.README_FILE_PATH]: getInputValue[Input.README_FILE_PATH],
-    [Input.ACTION_REPOSITORY]: getInputValue[Input.ACTION_REPOSITORY]
+    [Input.ACTION_FILE_PATH]: getInput[Input.ACTION_FILE_PATH],
+    [Input.README_FILE_PATH]: getInput[Input.README_FILE_PATH],
+    [Input.ACTION_REPOSITORY]: getInput[Input.ACTION_REPOSITORY]
   }).execute();
 })();

@@ -12,14 +12,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
 
 import { CompositeRuns } from '../schema/composite/composite-runs.js';
 
 /**
- * Generates a Mermaid flowchart from GitHub Actions
- * workflow composite job steps.
+ * Generates a Mermaid flowchart from the provided composite runs.
  */
 export class MermaidFlowchartGenerator {
   private readonly runs: CompositeRuns;
@@ -31,8 +29,6 @@ export class MermaidFlowchartGenerator {
   generate(): string {
     const lines: string[] = ['flowchart TD'];
     const nodeIds: string[] = [];
-    const conditionNodes: string[] = [];
-
     let nodeIndex = 0;
     let lastNodeId: string | null = null;
 
@@ -40,7 +36,9 @@ export class MermaidFlowchartGenerator {
 
     for (const step of this.runs.steps) {
       const nodeId = getNodeId();
-      const label = this.escape(step.name || step.id || 'Unnamed Step');
+      const name = this.escape(step.name || step.id || 'Unnamed Step');
+      const uses = step.uses ? `\\nuses: ${this.escape(step.uses)}` : '';
+      const label = `${name}${uses}`;
       lines.push(`${nodeId}["${label}"]`);
       nodeIds.push(nodeId);
 
@@ -48,17 +46,15 @@ export class MermaidFlowchartGenerator {
         const conditionNodeId = getNodeId();
         const conditionLabel = this.escape(step.if);
         lines.push(
-          `${lastNodeId ?? nodeId} --> ${conditionNodeId}{"${conditionLabel}"}`
+          `${lastNodeId ?? nodeId} --> ${conditionNodeId}{"if: ${conditionLabel}"}`
         );
         lines.push(`${conditionNodeId} -->|Yes| ${nodeId}`);
-        conditionNodes.push(conditionNodeId);
         lastNodeId = conditionNodeId;
       } else if (lastNodeId) {
         lines.push(`${lastNodeId} --> ${nodeId}`);
-        lastNodeId = nodeId;
-      } else {
-        lastNodeId = nodeId;
       }
+
+      lastNodeId = nodeId;
     }
 
     return lines.join('\n');

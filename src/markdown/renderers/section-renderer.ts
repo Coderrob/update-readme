@@ -15,11 +15,11 @@
  *
  */
 
-import { Renderer } from '../../types.js';
+import { IRender } from '../../types.js';
 
 /**
  * Base class for markdown sections.
  */
-export abstract class SectionRenderer implements Renderer {
+export abstract class SectionRenderer implements IRender {
   abstract render(): Promise<string>;
 }

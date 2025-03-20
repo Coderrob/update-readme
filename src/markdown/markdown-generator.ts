@@ -19,7 +19,7 @@ import { header, p as paragraph, tsMarkdown as markdown } from 'ts-markdown';
 
 import { Action } from '../schema/action.js';
 import { Runs } from '../schema/runs.js';
-import { Renderer } from '../types.js';
+import { IRender } from '../types.js';
 import { isCompositeRun } from '../utils/guards.js';
 import {
   AcknowledgmentRenderer,
@@ -61,7 +61,7 @@ export class MarkdownGenerator {
     return content.join('\n');
   }
 
-  private async createRunsSection(runs: Runs): Promise<Renderer> {
+  private async createRunsSection(runs: Runs): Promise<IRender> {
     return isCompositeRun(runs)
       ? new CompositeRunRenderer(runs)
       : new SimpleRunRenderer(runs);

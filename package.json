@@ -62,7 +62,7 @@
     "url": "git+https://github.com/Coderrob/update-action-readme.git"
   },
   "scripts": {
-    "all": "npm run lint:fix && npm run lint && npm run test && npm run coverage && npm run package",
+    "all": "npm run lint:fix && npm run lint && npm run test:coverage && npm run package",
     "bundle": "npm run lint:fix && npm run package",
     "coverage": "npx make-coverage-badge --output-path ./badges/coverage.svg",
     "format": "npx prettier --write .",
@@ -71,7 +71,8 @@
     "lint:fix": "npm run format && npx eslint . --fix",
     "package": "npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "package:watch": "npm run package -- --watch",
-    "test": "cross-env npx jest"
+    "test": "cross-env npx jest",
+    "test:coverage": "npm run test && npm run coverage"
   },
   "type": "module",
   "version": "1.0.0"

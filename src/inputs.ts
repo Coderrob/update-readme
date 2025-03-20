@@ -52,7 +52,7 @@ export const actionInputs: Record<Input, InputEntry> = {
  * This proxy ensures that the correct default values
  * and validation are applied to each input.
  */
-export const getInputValue = new Proxy({} as Record<Input, string>, {
+export const getInput = new Proxy({} as Record<Input, string>, {
   get: (_, key: string) => {
     if (!Object.values(Input).includes(key as Input)) {
       throw new Error(`Invalid input key: ${key}`);

@@ -46,6 +46,18 @@ export interface IExecute {
   execute(): Promise<void>;
 }
 
+export interface IRender {
+  render(): Promise<string>;
+}
+
+export interface ILog {
+  debug(message: string): void;
+  info(message: string): void;
+  warn(message: string, error?: unknown): void;
+  error(message: string, error: unknown): void;
+  fatal(message: string, error?: unknown): void;
+}
+
 export enum NodeVersion {
   NODE16 = 'node16',
   NODE18 = 'node18',
@@ -57,7 +69,3 @@ export const CompositeRun = 'composite';
 export const DockerRun = 'docker';
 
 export type RunType = typeof CompositeRun | typeof DockerRun | `${NodeVersion}`;
-
-export interface Renderer {
-  render(): Promise<string>;
-}
