@@ -39,7 +39,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Update README.md with Action Metadata
-        id: update-readme
         uses: Coderrob/update-action-readme@v1
         with:
           action-file-path: <value>

@@ -44,7 +44,6 @@ export class ExampleUsageRenderer extends SectionRenderer {
           '        uses: actions/checkout@v2',
           '',
           `      - name: ${this.name}`,
-          '        id: update-readme',
           `        uses: ${this.actionRepository}@v1`,
           '        with:',
           ...Object.keys(this.inputs || {})
