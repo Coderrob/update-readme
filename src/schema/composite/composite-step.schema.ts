@@ -22,6 +22,7 @@ export const CompositeStepSchema = z
   .object({
     id: z.string().optional().describe('A unique identifier for the step.'),
     run: z.string().optional().describe('The command you want to run.'),
+    uses: z.string().optional().describe('The path or reference to an action.'),
     name: z.string().optional().describe('The name of the composite step.'),
     shell: z.string().optional(),
     'working-directory': z

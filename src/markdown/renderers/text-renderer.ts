@@ -15,11 +15,14 @@
  *
  */
 
-import { IRender } from '../../types.js';
+import { SectionRenderer } from './section-renderer.js';
 
-/**
- * Base class for markdown sections.
- */
-export abstract class SectionRenderer implements IRender {
-  abstract render(): Promise<string>;
+export class TextRenderer extends SectionRenderer {
+  constructor(private readonly text: string) {
+    super();
+  }
+
+  async render(): Promise<string> {
+    return this.text;
+  }
 }

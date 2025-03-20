@@ -1,3 +1,20 @@
+/*
+ * Copyright 2025 Robert Lindley
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
 import * as core from '@actions/core';
 
 import { ACTION_FILE_PATH, README_FILE_PATH } from './constants.js';
@@ -35,7 +52,7 @@ export const actionInputs: Record<Input, InputEntry> = {
  * This proxy ensures that the correct default values
  * and validation are applied to each input.
  */
-export const getInputValue = new Proxy({} as Record<Input, string>, {
+export const getInput = new Proxy({} as Record<Input, string>, {
   get: (_, key: string) => {
     if (!Object.values(Input).includes(key as Input)) {
       throw new Error(`Invalid input key: ${key}`);

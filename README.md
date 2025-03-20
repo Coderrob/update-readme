@@ -29,19 +29,22 @@ This action does not define any outputs.
 
 ## Example Usage
 
-    jobs:
-      example:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout Source
-            uses: actions/checkout@v2
+```yaml
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        id: checkout-source
+        uses: actions/checkout@v2
 
-          - name: Run Update README.md with Action Metadata
-            uses: Coderrob/update-action-readme@main
-            with:
-              action-file-path: <value>
-              action-repository: <value>
-              readme-file-path: <value>
+      - name: Update README.md with Action Metadata
+        uses: Coderrob/update-action-readme@v1
+        with:
+          action-file-path: <value>
+          action-repository: <value>
+          readme-file-path: <value>
+```
 
 ## Acknowledgments
 
