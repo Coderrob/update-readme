@@ -40,7 +40,7 @@ export class MermaidFlowchartGenerator {
 
     for (const step of this.runs.steps) {
       const nodeId = getNodeId();
-      const label = this.escape(step.name ?? step.run ?? 'Unnamed Step');
+      const label = this.escape(step.name || step.id || 'Unnamed Step');
       lines.push(`${nodeId}["${label}"]`);
       nodeIds.push(nodeId);
 
