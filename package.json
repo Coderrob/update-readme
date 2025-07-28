@@ -12,7 +12,7 @@
   "description": "A GitHub Action to update the README.md file with the latest version information from the action.yml.",
   "devDependencies": {
     "@eslint/compat": "^1.2.6",
-    "@jest/globals": "^29.7.0",
+    "@jest/globals": "^30.0.5",
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
