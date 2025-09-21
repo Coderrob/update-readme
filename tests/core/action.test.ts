@@ -19,9 +19,9 @@
 import * as core from '@actions/core';
 import { jest } from '@jest/globals';
 
-import { UpdateReadmeAction } from './action.js';
-import { ACTION_FILE_PATH, README_FILE_PATH } from './constants.js';
-import { Input } from './types.js';
+import { UpdateReadmeAction } from '../../src/core/action.js';
+import { ACTION_FILE_PATH, README_FILE_PATH } from '../../src/constants.js';
+import { Input } from '../../src/types.js';
 
 jest.mock('@actions/core');
 

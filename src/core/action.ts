@@ -18,12 +18,12 @@
 
 import * as core from '@actions/core';
 
-import { MarkdownGenerator } from './markdown/markdown-generator.js';
-import { Action } from './schema/action.js';
+import { MarkdownGenerator } from '../generators/markdown/markdown-generator.js';
+import { ActionSchema } from '../schema/action.schema.js';
 import { IExecute, Input } from './types.js';
-import { isError } from './utils/guards.js';
-import { readYamlFile } from './utils/read-yaml-file.js';
-import { ReadmeGenerator } from './utils/readme-generator.js';
+import { isError } from '../utils/guards.js';
+import { readYamlFile } from '../utils/read-yaml-file.js';
+import { ReadmeGenerator } from '../utils/readme-generator.js';
 
 /**
  * Represents an action that generates documentation
@@ -49,7 +49,8 @@ export class UpdateReadmeAction implements IExecute {
    */
   async execute(): Promise<void> {
     try {
-      const action: Action = await readYamlFile<Action>(this.actionYamlPath);
+      const parsedAction = await readYamlFile(this.actionYamlPath);
+      const action = ActionSchema.parse(parsedAction);
       const markdown = new MarkdownGenerator(action, this.repository);
       await new ReadmeGenerator(markdown, this.readmeFilePath).generate();
     } catch (error) {

@@ -24,13 +24,6 @@
     "target": "ES2022",
     "useUnknownInCatchVariables": true
   },
-  "exclude": [
-    "__tests__",
-    "__mocks__",
-    "coverage",
-    "dist",
-    "node_modules",
-    "**/*.(spec|test).(j|t)s"
-  ],
-  "include": ["src"]
+  "exclude": ["__tests__", "__mocks__", "coverage", "dist", "node_modules"],
+  "include": ["src", "tests"]
 }

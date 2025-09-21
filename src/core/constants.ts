@@ -16,14 +16,7 @@
  *
  */
 
-import { UpdateReadmeAction } from './core/action.js';
-import { getInput } from './inputs.js';
-import { Input } from './types.js';
+export const README_FILE_PATH = './README.md';
+export const ACTION_FILE_PATH = './action.yml';
 
-(async () => {
-  await new UpdateReadmeAction({
-    [Input.ACTION_FILE_PATH]: getInput[Input.ACTION_FILE_PATH],
-    [Input.README_FILE_PATH]: getInput[Input.README_FILE_PATH],
-    [Input.ACTION_REPOSITORY]: getInput[Input.ACTION_REPOSITORY]
-  }).execute();
-})();
+export const DEFAULT_ENCODING: BufferEncoding = 'utf-8';

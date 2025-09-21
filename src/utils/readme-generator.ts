@@ -17,7 +17,7 @@
 
 import fs from 'fs';
 
-import { MarkdownGenerator } from '../markdown/markdown-generator.js';
+import { MarkdownGenerator } from '../generators/markdown/markdown-generator.js';
 
 /**
  * Generates a README file based on the provided Markdown content.

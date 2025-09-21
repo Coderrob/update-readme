@@ -16,14 +16,20 @@
  *
  */
 
-import { UpdateReadmeAction } from './core/action.js';
-import { getInput } from './inputs.js';
-import { Input } from './types.js';
+import { z } from 'zod';
 
-(async () => {
-  await new UpdateReadmeAction({
-    [Input.ACTION_FILE_PATH]: getInput[Input.ACTION_FILE_PATH],
-    [Input.README_FILE_PATH]: getInput[Input.README_FILE_PATH],
-    [Input.ACTION_REPOSITORY]: getInput[Input.ACTION_REPOSITORY]
-  }).execute();
-})();
+import { validKeyRegex } from './constants.js';
+import { InputEntrySchema } from './input-entry.schema.js';
+
+/**
+ * Inputs schema: a record whose keys match the validKeyRegex.
+ */
+export const InputsSchema = z
+  .record(InputEntrySchema)
+  .refine(
+    (inputs) => Object.keys(inputs).every((key) => validKeyRegex.test(key)),
+    {
+      message:
+        'Every input key must match the pattern /^[a-zA-Z][a-zA-Z0-9_-]*$/'
+    }
+  );

@@ -16,14 +16,14 @@
  *
  */
 
-import { UpdateReadmeAction } from './core/action.js';
-import { getInput } from './inputs.js';
-import { Input } from './types.js';
+import { z } from 'zod';
 
-(async () => {
-  await new UpdateReadmeAction({
-    [Input.ACTION_FILE_PATH]: getInput[Input.ACTION_FILE_PATH],
-    [Input.README_FILE_PATH]: getInput[Input.README_FILE_PATH],
-    [Input.ACTION_REPOSITORY]: getInput[Input.ACTION_REPOSITORY]
-  }).execute();
-})();
+/**
+ * Branding Schema
+ */
+export const BrandingSchema = z
+  .object({
+    color: z.string().describe('The primary color of the brand'),
+    icon: z.string().describe('The icon best representing the action category')
+  })
+  .strict();

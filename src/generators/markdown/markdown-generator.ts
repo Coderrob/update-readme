@@ -17,10 +17,10 @@
 
 import { header, p as paragraph, tsMarkdown as markdown } from 'ts-markdown';
 
-import { Action } from '../schema/action.js';
-import { Runs } from '../schema/runs.js';
-import { IRender } from '../types.js';
-import { isCompositeRun } from '../utils/guards.js';
+import { Action } from '../../schema/action.js';
+import { Runs } from '../../schema/runs.js';
+import { IRender } from '../../types.js';
+import { isCompositeRun } from '../../utils/guards.js';
 import {
   AcknowledgmentRenderer,
   BrandingRenderer,
@@ -29,18 +29,18 @@ import {
   InputsRenderer,
   OutputsRenderer,
   SimpleRunRenderer
-} from '../generators/renderers/index.js';
-import { TextRenderer } from '../generators/renderers/text-renderer.js';
+} from '../renderers/index.js';
+import { TextRenderer } from '../renderers/text-renderer.js';
 import {
   TemplateEngine,
   ConfigurableTemplateRenderer,
   TemplateContext
-} from '../generators/markdown/template-engine.js';
-import { TemplateConfigLoader } from '../generators/markdown/template-config.js';
+} from './template-engine.js';
+import { TemplateConfigLoader } from './template-config.js';
 import {
   ContentValidator,
   ValidationConfig
-} from '../analyzers/content-validator.js';
+} from '../../analyzers/content-validator.js';
 
 export class MarkdownGenerator {
   private templateEngine?: TemplateEngine;

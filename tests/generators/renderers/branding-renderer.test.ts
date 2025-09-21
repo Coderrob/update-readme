@@ -1,4 +1,4 @@
-import { BrandingRenderer } from './branding-renderer.js';
+import { BrandingRenderer } from '../../../src/generators/renderers/branding-renderer.js';
 
 describe('BrandingRenderer', () => {
   it('should render the branding section correctly', async () => {

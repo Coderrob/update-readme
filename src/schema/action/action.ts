@@ -1,5 +1,4 @@
 /*
- *
  * Copyright 2025 Robert Lindley
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,14 +15,8 @@
  *
  */
 
-import { UpdateReadmeAction } from './core/action.js';
-import { getInput } from './inputs.js';
-import { Input } from './types.js';
+import { z } from 'zod';
 
-(async () => {
-  await new UpdateReadmeAction({
-    [Input.ACTION_FILE_PATH]: getInput[Input.ACTION_FILE_PATH],
-    [Input.README_FILE_PATH]: getInput[Input.README_FILE_PATH],
-    [Input.ACTION_REPOSITORY]: getInput[Input.ACTION_REPOSITORY]
-  }).execute();
-})();
+import { ActionSchema } from './action.schema.js';
+
+export type Action = z.infer<typeof ActionSchema>;

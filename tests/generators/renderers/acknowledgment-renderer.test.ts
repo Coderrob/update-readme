@@ -1,4 +1,4 @@
-import { AcknowledgmentRenderer } from './acknowledgment-renderer.js';
+import { AcknowledgmentRenderer } from '../../../src/generators/renderers/acknowledgment-renderer.js';
 
 describe('AcknowledgmentRenderer', () => {
   it('should render the acknowledgment section correctly', async () => {

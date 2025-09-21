@@ -1,5 +1,5 @@
-import { CompositeRuns } from '../schema/composite/composite-runs.js';
-import { MermaidFlowchartGenerator } from './mermaid-flowchart-generator.js';
+import { CompositeRuns } from '../../src/schema/composite/composite-runs.js';
+import { MermaidFlowchartGenerator } from '../../src/utils/mermaid-flowchart-generator.js';
 
 describe('MermaidFlowchartGenerator', () => {
   let runs: CompositeRuns;

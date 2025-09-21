@@ -16,14 +16,22 @@
  *
  */
 
-import { UpdateReadmeAction } from './core/action.js';
-import { getInput } from './inputs.js';
-import { Input } from './types.js';
+import { z } from 'zod';
 
-(async () => {
-  await new UpdateReadmeAction({
-    [Input.ACTION_FILE_PATH]: getInput[Input.ACTION_FILE_PATH],
-    [Input.README_FILE_PATH]: getInput[Input.README_FILE_PATH],
-    [Input.ACTION_REPOSITORY]: getInput[Input.ACTION_REPOSITORY]
-  }).execute();
-})();
+/**
+ * Output entry schema
+ */
+export const OutputEntrySchema = z
+  .object({
+    description: z
+      .string()
+      .optional()
+      .describe('A string description of the output parameter.'),
+    value: z
+      .string()
+      .optional()
+      .describe(
+        'The value that the output parameter will be mapped to. You can set this to a string or an expression with context.'
+      )
+  })
+  .strict();
