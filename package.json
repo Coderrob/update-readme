@@ -7,7 +7,7 @@
     "@actions/core": "^1.11.1",
     "js-yaml": "^4.1.0",
     "ts-markdown": "^1.2.0",
-    "zod": "^3.24.1"
+    "zod": "^4.1.11"
   },
   "description": "A GitHub Action to update the README.md file with the latest version information from the action.yml.",
   "devDependencies": {
