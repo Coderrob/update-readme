@@ -17,11 +17,12 @@
  */
 
 import { z } from 'zod';
-
-import { validKeyRegex } from './constants.js';
+import { validKeyRegex } from '../utils/constants.js';
 import { OutputEntrySchema } from './output-entry.schema.js';
 
 const message = `Every output key must match the pattern ${validKeyRegex.source}`;
+
+export type Outputs = z.infer<typeof OutputsSchema>;
 
 /**
  * Outputs schema: a record whose keys match the validKeyRegex.

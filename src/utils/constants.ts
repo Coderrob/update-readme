@@ -16,14 +16,12 @@
  *
  */
 
-import { getInput } from './core/action-inputs.js';
-import { Input } from './core/types.js';
-import { UpdateReadmeAction } from './core/update-readme.action.js';
+export const README_FILE_PATH = './README.md';
+export const ACTION_FILE_PATH = './action.yml';
 
-(async () => {
-  await new UpdateReadmeAction({
-    [Input.ACTION_FILE_PATH]: getInput[Input.ACTION_FILE_PATH],
-    [Input.README_FILE_PATH]: getInput[Input.README_FILE_PATH],
-    [Input.ACTION_REPOSITORY]: getInput[Input.ACTION_REPOSITORY]
-  }).execute();
-})();
+export const DEFAULT_ENCODING: BufferEncoding = 'utf-8';
+
+/**
+ * Regular expression to validate keys for `inputs` and `outputs`.
+ */
+export const validKeyRegex = /^[a-zA-Z][a-zA-Z0-9_-]*$/;

@@ -18,6 +18,8 @@
 
 import { z } from 'zod';
 
+export type Branding = z.infer<typeof BrandingSchema>;
+
 /**
  * Branding Schema
  */

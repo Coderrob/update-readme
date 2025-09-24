@@ -1,5 +1,4 @@
 /*
- *
  * Copyright 2025 Robert Lindley
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,26 +15,27 @@
  *
  */
 
-import { readFile } from 'fs/promises';
-import * as yaml from 'js-yaml';
+import fs from 'fs';
 
-import { isString } from './guards.js';
-import { DEFAULT_ENCODING } from './constants.js';
-
-type Document = Record<string, unknown>;
+import { MarkdownGenerator } from './markdown.generator.js';
 
 /**
- * Reads a YAML file from disk and returns its parsed content.
+ * Generates a README file based on the provided Markdown content.
  */
-export async function readYamlFile<T extends Document>(
-  filePath: string
-): Promise<T> {
-  const fileContent = await readFile(filePath, {
-    encoding: DEFAULT_ENCODING,
-    flag: 'r'
-  });
-  if (!isString(fileContent) || !fileContent) {
-    throw new Error(`YAML file at ${filePath} is empty`);
+export class ReadmeGenerator {
+  private markdownGenerator: MarkdownGenerator;
+  private filePath: string;
+
+  constructor(markdownGenerator: MarkdownGenerator, filePath: string) {
+    this.markdownGenerator = markdownGenerator;
+    this.filePath = filePath;
   }
-  return yaml.load(fileContent) as T;
+
+  /**
+   * Generates the README file.
+   */
+  async generate(): Promise<void> {
+    const markdownContent = await this.markdownGenerator.generate();
+    fs.writeFileSync(this.filePath, markdownContent);
+  }
 }

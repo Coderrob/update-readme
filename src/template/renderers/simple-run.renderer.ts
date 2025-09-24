@@ -1,5 +1,4 @@
 /*
- *
  * Copyright 2025 Robert Lindley
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,14 +15,21 @@
  *
  */
 
-import { getInput } from './core/action-inputs.js';
-import { Input } from './core/types.js';
-import { UpdateReadmeAction } from './core/update-readme.action.js';
+import { header, p as paragraph, tsMarkdown as markdown } from 'ts-markdown';
 
-(async () => {
-  await new UpdateReadmeAction({
-    [Input.ACTION_FILE_PATH]: getInput[Input.ACTION_FILE_PATH],
-    [Input.README_FILE_PATH]: getInput[Input.README_FILE_PATH],
-    [Input.ACTION_REPOSITORY]: getInput[Input.ACTION_REPOSITORY]
-  }).execute();
-})();
+import { SectionRenderer } from './section.renderer.js';
+import { Runs } from '../../schema/index.js';
+
+export class SimpleRunRenderer extends SectionRenderer {
+  constructor(private readonly runs: Runs) {
+    super();
+  }
+
+  async render(): Promise<string> {
+    return markdown([
+      '',
+      header(2, 'Runs'),
+      paragraph(`**Execution Type:** ${this.runs.using}`)
+    ]);
+  }
+}

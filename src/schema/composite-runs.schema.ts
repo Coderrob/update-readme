@@ -16,14 +16,24 @@
  *
  */
 
-import { getInput } from './core/action-inputs.js';
-import { Input } from './core/types.js';
-import { UpdateReadmeAction } from './core/update-readme.action.js';
+import { z } from 'zod';
+import { CompositeRun } from '../types/index.js';
+import { CompositeStepSchema } from './composite-step.schema.js';
 
-(async () => {
-  await new UpdateReadmeAction({
-    [Input.ACTION_FILE_PATH]: getInput[Input.ACTION_FILE_PATH],
-    [Input.README_FILE_PATH]: getInput[Input.README_FILE_PATH],
-    [Input.ACTION_REPOSITORY]: getInput[Input.ACTION_REPOSITORY]
-  }).execute();
-})();
+export type CompositeRuns = z.infer<typeof CompositeRunsSchema>;
+
+/**
+ * Composite Action Runs Schema.
+ *
+ * A composite action must have a `using: "composite"` and an array of steps.
+ */
+export const CompositeRunsSchema = z
+  .object({
+    using: z.literal(CompositeRun),
+    steps: z
+      .array(CompositeStepSchema)
+      .describe(
+        'The steps that you plan to run in this action. These can be either run steps or uses steps.'
+      )
+  })
+  .strict();

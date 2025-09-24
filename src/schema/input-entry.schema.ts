@@ -18,6 +18,8 @@
 
 import { z } from 'zod';
 
+export type InputEntry = z.infer<typeof InputEntrySchema>;
+
 /**
  * Input entry schema
  */

@@ -16,9 +16,8 @@
  *
  */
 
-import { CompositeRuns } from '../schema/composite/composite-runs.js';
-import { Runs } from '../schema/runs.js';
-import { CompositeRun } from '../types.js';
+import { CompositeRun } from '../types/index.js';
+import { CompositeRuns, Runs } from '../schema/index.js';
 
 /**
  * Checks if the provided error is an instance of Error.

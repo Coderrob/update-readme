@@ -18,8 +18,10 @@
 
 import { z } from 'zod';
 
-import { validKeyRegex } from './constants.js';
+import { validKeyRegex } from '../utils/constants.js';
 import { InputEntrySchema } from './input-entry.schema.js';
+
+export type Inputs = z.infer<typeof InputsSchema>;
 
 /**
  * Inputs schema: a record whose keys match the validKeyRegex.

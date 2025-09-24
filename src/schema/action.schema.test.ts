@@ -14,7 +14,7 @@
  * limitations under the License.
  *
  */
-import { NodeVersion } from '../types.js';
+import { NodeVersion } from '../types/index.js';
 import { ActionSchema } from './action.schema.js';
 
 describe('ActionSchema', () => {
@@ -27,7 +27,7 @@ describe('ActionSchema', () => {
           inputs: {},
           outputs: {},
           runs: {
-            using: NodeVersion.NODE18,
+            using: NodeVersion.NODE20,
             main: 'index.js'
           }
         }).success
@@ -41,7 +41,7 @@ describe('ActionSchema', () => {
           inputs: {},
           outputs: {},
           runs: {
-            using: NodeVersion.NODE18,
+            using: NodeVersion.NODE20,
             main: ''
           }
         }).success

@@ -1,0 +1,1441 @@
+{
+  "statistics": {
+    "detectionDate": "2025-09-24T07:18:45.793Z",
+    "formats": {
+      "typescript": {
+        "sources": {
+          "src/schema/runs/node/node-runs.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/runs/node/node-runs.schema.ts": {
+            "lines": 62,
+            "tokens": 230,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 62,
+            "duplicatedTokens": 230,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/runs/docker/docker-runs.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/runs/docker/docker-runs.schema.ts": {
+            "lines": 67,
+            "tokens": 261,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 67,
+            "duplicatedTokens": 261,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/runs/composite/composite-step.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/runs/composite/composite-step.schema.ts": {
+            "lines": 42,
+            "tokens": 223,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 42,
+            "duplicatedTokens": 223,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/runs/composite/composite-runs.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/runs/composite/composite-runs.schema.ts": {
+            "lines": 37,
+            "tokens": 107,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 37,
+            "duplicatedTokens": 107,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/runs/runs.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/runs/runs.schema.ts": {
+            "lines": 31,
+            "tokens": 89,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/node/node-runs.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/node/node-runs.schema.ts": {
+            "lines": 62,
+            "tokens": 230,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 62,
+            "duplicatedTokens": 230,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/docker/docker-runs.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/docker/docker-runs.schema.ts": {
+            "lines": 67,
+            "tokens": 261,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 67,
+            "duplicatedTokens": 261,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/composite/composite-step.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/composite/composite-step.schema.ts": {
+            "lines": 42,
+            "tokens": 223,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 42,
+            "duplicatedTokens": 223,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/composite/composite-runs.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/composite/composite-runs.schema.ts": {
+            "lines": 37,
+            "tokens": 107,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 37,
+            "duplicatedTokens": 107,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/components/outputs.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/components/outputs.schema.ts": {
+            "lines": 33,
+            "tokens": 124,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 33,
+            "duplicatedTokens": 124,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/components/output-entry.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/components/output-entry.schema.ts": {
+            "lines": 36,
+            "tokens": 99,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 36,
+            "duplicatedTokens": 99,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/components/inputs.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/components/inputs.schema.ts": {
+            "lines": 34,
+            "tokens": 114,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 34,
+            "duplicatedTokens": 114,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/components/input-entry.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/components/input-entry.schema.ts": {
+            "lines": 48,
+            "tokens": 159,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 48,
+            "duplicatedTokens": 159,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/components/branding.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/components/branding.schema.ts": {
+            "lines": 28,
+            "tokens": 75,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/common/required.ts": {
+            "lines": 23,
+            "tokens": 75,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/action/action.ts": {
+            "lines": 21,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/action/action.schema.ts": {
+            "lines": 71,
+            "tokens": 390,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 71,
+            "duplicatedTokens": 390,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/generators/renderers/text-renderer.ts": {
+            "lines": 27,
+            "tokens": 80,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/generators/renderers/simple-run-renderer.ts": {
+            "lines": 34,
+            "tokens": 153,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/generators/renderers/section-renderer.ts": {
+            "lines": 24,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/generators/renderers/outputs-renderer.ts": {
+            "lines": 46,
+            "tokens": 279,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/generators/renderers/inputs-renderer.ts": {
+            "lines": 56,
+            "tokens": 335,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/generators/renderers/index.ts": {
+            "lines": 25,
+            "tokens": 82,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/generators/renderers/example-usage-renderer.ts": {
+            "lines": 56,
+            "tokens": 292,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/generators/renderers/composite-run-renderer.ts": {
+            "lines": 49,
+            "tokens": 263,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/generators/renderers/branding-renderer.ts": {
+            "lines": 43,
+            "tokens": 244,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/generators/renderers/acknowledgment-renderer.ts": {
+            "lines": 39,
+            "tokens": 147,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/generators/markdown/template-engine.ts": {
+            "lines": 673,
+            "tokens": 4096,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 16,
+            "duplicatedTokens": 122,
+            "percentage": 2.38,
+            "percentageTokens": 2.98,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/generators/markdown/template-config.ts": {
+            "lines": 373,
+            "tokens": 2406,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/generators/markdown/markdown-generator.ts": {
+            "lines": 137,
+            "tokens": 946,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 95,
+            "duplicatedTokens": 761,
+            "percentage": 69.34,
+            "percentageTokens": 80.44,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/utils/readme-generator.ts": {
+            "lines": 40,
+            "tokens": 150,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/utils/read-yaml-file.ts": {
+            "lines": 40,
+            "tokens": 192,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/utils/mermaid-flowchart-generator.ts": {
+            "lines": 65,
+            "tokens": 487,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 16,
+            "duplicatedTokens": 122,
+            "percentage": 24.62,
+            "percentageTokens": 25.05,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/utils/index.ts": {
+            "lines": 21,
+            "tokens": 37,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/utils/guards.ts": {
+            "lines": 60,
+            "tokens": 243,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/runs.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/runs.schema.ts": {
+            "lines": 31,
+            "tokens": 89,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/outputs.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/outputs.schema.ts": {
+            "lines": 33,
+            "tokens": 124,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 33,
+            "duplicatedTokens": 124,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/output-entry.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/output-entry.schema.ts": {
+            "lines": 36,
+            "tokens": 99,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 36,
+            "duplicatedTokens": 99,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/inputs.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/inputs.schema.ts": {
+            "lines": 34,
+            "tokens": 114,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 34,
+            "duplicatedTokens": 114,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/input-entry.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/input-entry.schema.ts": {
+            "lines": 48,
+            "tokens": 159,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 48,
+            "duplicatedTokens": 159,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/index.ts": {
+            "lines": 32,
+            "tokens": 136,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/constants.ts": {
+            "lines": 21,
+            "tokens": 14,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/branding.ts": {
+            "lines": 22,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/branding.schema.ts": {
+            "lines": 28,
+            "tokens": 75,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/action.ts": {
+            "lines": 21,
+            "tokens": 47,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/action.schema.ts": {
+            "lines": 71,
+            "tokens": 390,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 71,
+            "duplicatedTokens": 390,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/schema/action.schema.test.ts": {
+            "lines": 49,
+            "tokens": 246,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/markdown/markdown-generator.ts": {
+            "lines": 137,
+            "tokens": 946,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 95,
+            "duplicatedTokens": 761,
+            "percentage": 69.34,
+            "percentageTokens": 80.44,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/core/types.ts": {
+            "lines": 70,
+            "tokens": 347,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 70,
+            "duplicatedTokens": 347,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/core/index.ts": {
+            "lines": 18,
+            "tokens": 28,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/core/constants.ts": {
+            "lines": 21,
+            "tokens": 38,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/core/action.ts": {
+            "lines": 62,
+            "tokens": 390,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/analyzers/structure-analyzer.ts": {
+            "lines": 804,
+            "tokens": 5710,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/analyzers/dependency-analyzer.ts": {
+            "lines": 715,
+            "tokens": 5127,
+            "sources": 1,
+            "clones": 2,
+            "duplicatedLines": 18,
+            "duplicatedTokens": 184,
+            "percentage": 2.52,
+            "percentageTokens": 3.59,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/analyzers/content-validator.ts": {
+            "lines": 806,
+            "tokens": 5584,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/types.ts": {
+            "lines": 70,
+            "tokens": 347,
+            "sources": 1,
+            "clones": 1,
+            "duplicatedLines": 70,
+            "duplicatedTokens": 347,
+            "percentage": 100,
+            "percentageTokens": 100,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/inputs.ts": {
+            "lines": 63,
+            "tokens": 378,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/index.ts": {
+            "lines": 28,
+            "tokens": 122,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          },
+          "src/constants.ts": {
+            "lines": 21,
+            "tokens": 38,
+            "sources": 1,
+            "clones": 0,
+            "duplicatedLines": 0,
+            "duplicatedTokens": 0,
+            "percentage": 0,
+            "percentageTokens": 0,
+            "newDuplicatedLines": 0,
+            "newClones": 0
+          }
+        },
+        "total": {
+          "lines": 6208,
+          "tokens": 34781,
+          "sources": 78,
+          "clones": 13,
+          "duplicatedLines": 620,
+          "duplicatedTokens": 3029,
+          "percentage": 9.99,
+          "percentageTokens": 8.71,
+          "newDuplicatedLines": 0,
+          "newClones": 0
+        }
+      }
+    },
+    "total": {
+      "lines": 6208,
+      "tokens": 34781,
+      "sources": 78,
+      "clones": 13,
+      "duplicatedLines": 620,
+      "duplicatedTokens": 3029,
+      "percentage": 9.99,
+      "percentageTokens": 8.71,
+      "newDuplicatedLines": 0,
+      "newClones": 0
+    }
+  },
+  "duplicates": [
+    {
+      "format": "typescript",
+      "lines": 63,
+      "fragment": "/*\n *\n * Copyright 2025 Robert Lindley\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n *\n */\n\nimport { z } from 'zod';\n\nimport { NodeVersion } from '../../types.js';\nimport { requiredString } from '../common/required.js';\n\n/**\n * Node action Runs Schema.\n *\n * A node action uses either `node12`, `node16`, `node20` and must define the entrypoint `main`.\n * @default 'node20' if not specified.\n */\nexport const NodeRunsSchema = z\n  .object({\n    using: z\n      .nativeEnum(NodeVersion)\n      .describe('The runtime used to execute the code specified in main.'),\n    main: requiredString(\n      'Main file for Node.js actions. This is required for Node.js actions.'\n    ).describe('The file that contains your action code.'),\n    pre: z\n      .string()\n      .optional()\n      .describe(\n        'Allows you to run a script at the start of a job, before the main: action begins'\n      ),\n    'pre-if': z\n      .string()\n      .optional()\n      .describe(\n        'Allows you to define conditions for the pre: action execution. The pre: action will only run if the conditions in pre-if are met. If not set, then pre-if defaults to always().'\n      ),\n    post: z\n      .string()\n      .optional()\n      .describe(\n        'Allows you to run a script at the end of a job, once the main: action has completed.'\n      ),\n    'post-if': z\n      .string()\n      .optional()\n      .describe(\n        'Allows you to define conditions for the post: action execution. The post: action will only run if the conditions in post-if are met. If not set, then post-if defaults to always().'\n      )\n  })\n  .strict();",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src\\schema\\node\\node-runs.schema.ts",
+        "start": 1,
+        "end": 63,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 63,
+          "column": 2,
+          "position": 230
+        }
+      },
+      "secondFile": {
+        "name": "src\\schema\\runs\\node\\node-runs.schema.ts",
+        "start": 1,
+        "end": 63,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 63,
+          "column": 2,
+          "position": 230
+        }
+      }
+    },
+    {
+      "format": "typescript",
+      "lines": 68,
+      "fragment": "/*\n *\n * Copyright 2025 Robert Lindley\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n *\n */\n\nimport { z } from 'zod';\n\nimport { DockerRun } from '../../types.js';\n\n/**\n * Docker action Runs Schema.\n *\n * A docker action requires a `dockerfile` and a `using: \"docker\"`.\n */\n\nexport const DockerRunsSchema = z\n  .object({\n    using: z.literal(DockerRun),\n    'pre-entrypoint': z\n      .string()\n      .optional()\n      .describe(\n        'Allows you to run a script before the entrypoint action begins. For example, you can use pre-entrypoint: to run a prerequisite setup script.'\n      ),\n    image: z\n      .string()\n      .describe(\n        'The Docker image to use as the container to run the action. The value can be the Docker base image name, a local Dockerfile in your repository, or a public image in Docker Hub or another registry'\n      ),\n    entrypoint: z\n      .string()\n      .optional()\n      .describe(\n        'Overrides the Docker ENTRYPOINT in the Dockerfile, or sets it if one was not already specified.'\n      ),\n    'post-entrypoint': z\n      .string()\n      .optional()\n      .describe(\n        'Allows you to run a script after the entrypoint action completes.'\n      ),\n    args: z\n      .array(z.string())\n      .optional()\n      .describe(\n        'An array of strings that define the inputs for a Docker container. Inputs can include hardcoded strings. GitHub passes the args to the container ENTRYPOINT when the container starts up.'\n      ),\n    env: z\n      .record(z.string(), z.string())\n      .optional()\n      .describe(\n        'Specifies a key/value map of environment variables to set in the container environment.'\n      )\n  })\n  .strict();",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src\\schema\\docker\\docker-runs.schema.ts",
+        "start": 1,
+        "end": 68,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 68,
+          "column": 2,
+          "position": 261
+        }
+      },
+      "secondFile": {
+        "name": "src\\schema\\runs\\docker\\docker-runs.schema.ts",
+        "start": 1,
+        "end": 68,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 68,
+          "column": 2,
+          "position": 261
+        }
+      }
+    },
+    {
+      "format": "typescript",
+      "lines": 43,
+      "fragment": "/*\n *\n * Copyright 2025 Robert Lindley\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n *\n */\n\nimport { z } from 'zod';\n\nexport const CompositeStepSchema = z\n  .object({\n    id: z.string().optional().describe('A unique identifier for the step.'),\n    run: z.string().optional().describe('The command you want to run.'),\n    uses: z.string().optional().describe('The path or reference to an action.'),\n    name: z.string().optional().describe('The name of the composite step.'),\n    shell: z.string().optional(),\n    'working-directory': z\n      .string()\n      .optional()\n      .describe('Specifies the working directory where the command is run.'),\n    env: z\n      .record(z.string())\n      .optional()\n      .describe('Sets a map of environment variables for only that step.'),\n    if: z\n      .string()\n      .optional()\n      .describe(\n        'You can use the if conditional to prevent a step from running unless a condition is met. You can use any supported context and expression to create a conditional.'\n      )\n  })\n  .strict();",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src\\schema\\composite\\composite-step.schema.ts",
+        "start": 1,
+        "end": 43,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 43,
+          "column": 2,
+          "position": 223
+        }
+      },
+      "secondFile": {
+        "name": "src\\schema\\runs\\composite\\composite-step.schema.ts",
+        "start": 1,
+        "end": 43,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 43,
+          "column": 2,
+          "position": 223
+        }
+      }
+    },
+    {
+      "format": "typescript",
+      "lines": 38,
+      "fragment": "/*\n *\n * Copyright 2025 Robert Lindley\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n *\n */\n\nimport { z } from 'zod';\n\nimport { CompositeRun } from '../../types.js';\nimport { CompositeStepSchema } from './composite-step.schema.js';\n\n/**\n * Composite Action Runs Schema.\n *\n * A composite action must have a `using: \"composite\"` and an array of steps.\n */\nexport const CompositeRunsSchema = z\n  .object({\n    using: z.literal(CompositeRun),\n    steps: z\n      .array(CompositeStepSchema)\n      .describe(\n        'The steps that you plan to run in this action. These can be either run steps or uses steps.'\n      )\n  })\n  .strict();",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src\\schema\\composite\\composite-runs.schema.ts",
+        "start": 1,
+        "end": 38,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 38,
+          "column": 2,
+          "position": 107
+        }
+      },
+      "secondFile": {
+        "name": "src\\schema\\runs\\composite\\composite-runs.schema.ts",
+        "start": 1,
+        "end": 38,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 38,
+          "column": 2,
+          "position": 107
+        }
+      }
+    },
+    {
+      "format": "typescript",
+      "lines": 17,
+      "fragment": "(step.if);\n        lines.push(\n          `${lastNodeId ?? nodeId} --> ${conditionNodeId}{\"if: ${conditionLabel}\"}`\n        );\n        lines.push(`${conditionNodeId} -->|Yes| ${nodeId}`);\n        lastNodeId = conditionNodeId;\n      } else if (lastNodeId) {\n        lines.push(`${lastNodeId} --> ${nodeId}`);\n      }\n\n      lastNodeId = nodeId;\n    }\n\n    return lines.join('\\n');\n  }\n\n  private",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src\\utils\\mermaid-flowchart-generator.ts",
+        "start": 47,
+        "end": 63,
+        "startLoc": {
+          "line": 47,
+          "column": 7,
+          "position": 325
+        },
+        "endLoc": {
+          "line": 63,
+          "column": 8,
+          "position": 447
+        }
+      },
+      "secondFile": {
+        "name": "src\\generators\\markdown\\template-engine.ts",
+        "start": 455,
+        "end": 473,
+        "startLoc": {
+          "line": 455,
+          "column": 17,
+          "position": 2701
+        },
+        "endLoc": {
+          "line": 473,
+          "column": 6,
+          "position": 2823
+        }
+      }
+    },
+    {
+      "format": "typescript",
+      "lines": 34,
+      "fragment": "/*\n *\n * Copyright 2025 Robert Lindley\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n *\n */\n\nimport { z } from 'zod';\n\nimport { validKeyRegex } from './constants.js';\nimport { OutputEntrySchema } from './output-entry.schema.js';\n\nconst message = `Every output key must match the pattern ${validKeyRegex.source}`;\n\n/**\n * Outputs schema: a record whose keys match the validKeyRegex.\n */\nexport const OutputsSchema = z\n  .record(OutputEntrySchema)\n  .refine(\n    (outputs) => Object.keys(outputs).every((key) => validKeyRegex.test(key)),\n    { message }\n  );",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src\\schema\\outputs.schema.ts",
+        "start": 1,
+        "end": 34,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 34,
+          "column": 2,
+          "position": 124
+        }
+      },
+      "secondFile": {
+        "name": "src\\schema\\components\\outputs.schema.ts",
+        "start": 1,
+        "end": 34,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 34,
+          "column": 2,
+          "position": 124
+        }
+      }
+    },
+    {
+      "format": "typescript",
+      "lines": 37,
+      "fragment": "/*\n *\n * Copyright 2025 Robert Lindley\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n *\n */\n\nimport { z } from 'zod';\n\n/**\n * Output entry schema\n */\nexport const OutputEntrySchema = z\n  .object({\n    description: z\n      .string()\n      .optional()\n      .describe('A string description of the output parameter.'),\n    value: z\n      .string()\n      .optional()\n      .describe(\n        'The value that the output parameter will be mapped to. You can set this to a string or an expression with context.'\n      )\n  })\n  .strict();",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src\\schema\\output-entry.schema.ts",
+        "start": 1,
+        "end": 37,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 37,
+          "column": 2,
+          "position": 99
+        }
+      },
+      "secondFile": {
+        "name": "src\\schema\\components\\output-entry.schema.ts",
+        "start": 1,
+        "end": 37,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 37,
+          "column": 2,
+          "position": 99
+        }
+      }
+    },
+    {
+      "format": "typescript",
+      "lines": 35,
+      "fragment": "/*\n *\n * Copyright 2025 Robert Lindley\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n *\n */\n\nimport { z } from 'zod';\n\nimport { validKeyRegex } from './constants.js';\nimport { InputEntrySchema } from './input-entry.schema.js';\n\n/**\n * Inputs schema: a record whose keys match the validKeyRegex.\n */\nexport const InputsSchema = z\n  .record(InputEntrySchema)\n  .refine(\n    (inputs) => Object.keys(inputs).every((key) => validKeyRegex.test(key)),\n    {\n      message:\n        'Every input key must match the pattern /^[a-zA-Z][a-zA-Z0-9_-]*$/'\n    }\n  );",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src\\schema\\inputs.schema.ts",
+        "start": 1,
+        "end": 35,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 35,
+          "column": 2,
+          "position": 114
+        }
+      },
+      "secondFile": {
+        "name": "src\\schema\\components\\inputs.schema.ts",
+        "start": 1,
+        "end": 35,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 35,
+          "column": 2,
+          "position": 114
+        }
+      }
+    },
+    {
+      "format": "typescript",
+      "lines": 49,
+      "fragment": "/*\n *\n * Copyright 2025 Robert Lindley\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n *\n */\n\nimport { z } from 'zod';\n\n/**\n * Input entry schema\n */\nexport const InputEntrySchema = z\n  .object({\n    description: z\n      .string()\n      .optional()\n      .describe('A string description of the input parameter.'),\n    default: z\n      .any()\n      .optional()\n      .describe(\n        'A string representing the default value. The default value is used when an input parameter is not specified in a workflow file.'\n      ),\n    required: z\n      .boolean()\n      .optional()\n      .describe(\n        'A boolean to indicate whether the action requires the input parameter. Set to true when the parameter is required.'\n      ),\n    deprecationMessage: z\n      .string()\n      .optional()\n      .describe(\n        'If the input parameter is used, this string is logged as a warning message. You can use this warning to notify users that the input is closing down and mention any alternatives.'\n      )\n  })\n  .strict();",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src\\schema\\input-entry.schema.ts",
+        "start": 1,
+        "end": 49,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 49,
+          "column": 2,
+          "position": 159
+        }
+      },
+      "secondFile": {
+        "name": "src\\schema\\components\\input-entry.schema.ts",
+        "start": 1,
+        "end": 49,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 49,
+          "column": 2,
+          "position": 159
+        }
+      }
+    },
+    {
+      "format": "typescript",
+      "lines": 72,
+      "fragment": "/*\n *\n * Copyright 2025 Robert Lindley\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n *\n */\n\nimport { z } from 'zod';\n\nimport { CompositeRun } from '../types.js';\nimport { BrandingSchema } from './branding.schema.js';\nimport { InputsSchema } from './inputs.schema.js';\nimport { OutputsSchema } from './outputs.schema.js';\nimport { RunsSchema } from './runs.schema.js';\n\n/**\n * GitHub Action Schema.\n *\n * Based on the schemastore definition, the required top‐level properties are:\n * - `name`\n * - `description`\n * - `inputs`\n * - `outputs`\n * - `runs`\n *\n * Optional properties include `author` and `branding`.\n */\n\nexport const ActionSchema = z\n  .object({\n    name: z.string().describe('The name of the action.'),\n    description: z.string().describe('A short description of the action.'),\n    author: z.string().optional().describe('The author of the action.'),\n    branding: BrandingSchema.optional().describe(\n      'You can use a color and Feather icon to create a badge to personalize and distinguish your action.'\n    ),\n    inputs: InputsSchema.optional().describe(\n      'Input parameters allow you to specify data that the action expects to use during runtime.'\n    ),\n    outputs: OutputsSchema.optional().describe(\n      'Output parameters allow you to declare data that an action sets.'\n    ),\n    runs: RunsSchema.describe(\n      'The method of running the action. This can be a Node version, a composite, or a Docker container.'\n    )\n  })\n  .superRefine((schema, ctx) => {\n    const { runs, outputs } = schema;\n    const { using } = runs;\n    if (using === CompositeRun && !!outputs) {\n      Object.entries(outputs).forEach(([key, { value }]) => {\n        if (value) {\n          ctx.addIssue({\n            code: z.ZodIssueCode.custom,\n            message: `For 'composite', each output key must contain a 'value' field. Missing value for output key '${key}'`,\n            path: ['outputs']\n          });\n        }\n      });\n    }\n  });",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src\\schema\\action.schema.ts",
+        "start": 1,
+        "end": 72,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 72,
+          "column": 2,
+          "position": 390
+        }
+      },
+      "secondFile": {
+        "name": "src\\schema\\action\\action.schema.ts",
+        "start": 1,
+        "end": 72,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 72,
+          "column": 2,
+          "position": 390
+        }
+      }
+    },
+    {
+      "format": "typescript",
+      "lines": 96,
+      "fragment": ";\n\nexport class MarkdownGenerator {\n  private templateEngine?: TemplateEngine;\n\n  constructor(\n    private readonly action: Action,\n    private readonly actionRepository: string,\n    private readonly useTemplate = false,\n    private readonly customTemplatePath?: string,\n    private readonly workspacePath?: string\n  ) {\n    if (this.useTemplate) {\n      this.templateEngine = new TemplateEngine(this.createTemplateContext());\n    }\n  }\n\n  async generate(): Promise<string> {\n    if (this.useTemplate && this.templateEngine) {\n      return this.generateFromTemplate();\n    }\n\n    return this.generateFromRenderers();\n  }\n\n  private async generateFromTemplate(): Promise<string> {\n    const context = this.createTemplateContext();\n\n    let config;\n    if (this.customTemplatePath) {\n      // Load custom template from file\n      config = TemplateConfigLoader.loadFromFile(this.customTemplatePath);\n    } else if (this.workspacePath) {\n      // Load from workspace\n      config = TemplateConfigLoader.loadFromWorkspace(this.workspacePath);\n    } else {\n      // Use default configuration\n      config = undefined;\n    }\n\n    const renderer = new ConfigurableTemplateRenderer(context, config);\n    return renderer.render();\n  }\n\n  private async generateFromRenderers(): Promise<string> {\n    const sections = [\n      new TextRenderer(markdown([header(1, this.action.name)])),\n      new TextRenderer(markdown(['', paragraph(this.action.description)])),\n      new BrandingRenderer(this.action.branding),\n      new InputsRenderer(this.action.inputs),\n      new OutputsRenderer(this.action.outputs),\n      await this.createRunsSection(this.action.runs),\n      new ExampleUsageRenderer(\n        this.action.name,\n        this.actionRepository,\n        this.action.inputs\n      ),\n      new AcknowledgmentRenderer()\n    ];\n\n    const content = await Promise.all(\n      sections.flatMap(async (section) => await section.render())\n    );\n\n    return content.join('\\n');\n  }\n\n  private createTemplateContext(): TemplateContext {\n    return {\n      action: this.action,\n      repository: this.actionRepository,\n      metadata: {\n        generatedAt: new Date().toISOString(),\n        generatorVersion: '2.0.0',\n        documentVersion: '1.0.0'\n      }\n    };\n  }\n\n  private async createRunsSection(runs: Runs): Promise<IRender> {\n    return isCompositeRun(runs)\n      ? new CompositeRunRenderer(runs)\n      : new SimpleRunRenderer(runs);\n  }\n\n  /**\n   * Validate generated markdown content\n   */\n  validateContent(\n    content: string,\n    validationConfig?: Partial<ValidationConfig>\n  ) {\n    const validator = new ContentValidator(validationConfig);\n    return validator.validateContent(content, 'README.md');\n  }\n}",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src\\markdown\\markdown-generator.ts",
+        "start": 43,
+        "end": 138,
+        "startLoc": {
+          "line": 43,
+          "column": 36,
+          "position": 185
+        },
+        "endLoc": {
+          "line": 138,
+          "column": 2,
+          "position": 946
+        }
+      },
+      "secondFile": {
+        "name": "src\\generators\\markdown\\markdown-generator.ts",
+        "start": 43,
+        "end": 138,
+        "startLoc": {
+          "line": 43,
+          "column": 39,
+          "position": 185
+        },
+        "endLoc": {
+          "line": 138,
+          "column": 2,
+          "position": 946
+        }
+      }
+    },
+    {
+      "format": "typescript",
+      "lines": 10,
+      "fragment": ".forEach((dep) => {\n        const description = dep.description\n          ? dep.description.slice(0, 100) + '...'\n          : '';\n        summary += `| ${dep.name} | ${dep.version} | ${description} |\\n`;\n      });\n      summary += '\\n';\n    }\n\n    if (peerDeps",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src\\analyzers\\dependency-analyzer.ts",
+        "start": 211,
+        "end": 220,
+        "startLoc": {
+          "line": 211,
+          "column": 8,
+          "position": 1340
+        },
+        "endLoc": {
+          "line": 220,
+          "column": 9,
+          "position": 1432
+        }
+      },
+      "secondFile": {
+        "name": "src\\analyzers\\dependency-analyzer.ts",
+        "start": 198,
+        "end": 207,
+        "startLoc": {
+          "line": 198,
+          "column": 15,
+          "position": 1211
+        },
+        "endLoc": {
+          "line": 207,
+          "column": 8,
+          "position": 1303
+        }
+      }
+    },
+    {
+      "format": "typescript",
+      "lines": 71,
+      "fragment": "/*\n *\n * Copyright 2025 Robert Lindley\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\");\n * you may not use this file except in compliance with the License.\n * You may obtain a copy of the License at\n *\n *     http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing, software\n * distributed under the License is distributed on an \"AS IS\" BASIS,\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n * See the License for the specific language governing permissions and\n * limitations under the License.\n *\n */\n\n/**\n * Input names for the action.\n */\nexport enum Input {\n  README_FILE_PATH = 'readme-file-path',\n  ACTION_FILE_PATH = 'action-file-path',\n  ACTION_REPOSITORY = 'action-repository'\n}\n\nexport type InputEntry = IEntry<Input>;\n\n/**\n *  InputEntry interface definition\n */\nexport interface IEntry<T> {\n  id: T;\n  default: string;\n  deprecationMessage: string;\n  description: string;\n  required: boolean;\n  value?: string;\n}\n\n/**\n * Execute interface definition\n */\nexport interface IExecute {\n  execute(): Promise<void>;\n}\n\nexport interface IRender {\n  render(): Promise<string>;\n}\n\nexport interface ILog {\n  debug(message: string): void;\n  info(message: string): void;\n  warn(message: string, error?: unknown): void;\n  error(message: string, error: unknown): void;\n  fatal(message: string, error?: unknown): void;\n}\n\nexport enum NodeVersion {\n  NODE16 = 'node16',\n  NODE18 = 'node18',\n  NODE20 = 'node20',\n  NODE22 = 'node22'\n}\n\nexport const CompositeRun = 'composite';\nexport const DockerRun = 'docker';\n\nexport type RunType = typeof CompositeRun | typeof DockerRun | `${NodeVersion}`;",
+      "tokens": 0,
+      "firstFile": {
+        "name": "src\\types.ts",
+        "start": 1,
+        "end": 71,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 71,
+          "column": 2,
+          "position": 347
+        }
+      },
+      "secondFile": {
+        "name": "src\\core\\types.ts",
+        "start": 1,
+        "end": 71,
+        "startLoc": {
+          "line": 1,
+          "column": 1,
+          "position": 0
+        },
+        "endLoc": {
+          "line": 71,
+          "column": 2,
+          "position": 347
+        }
+      }
+    }
+  ]
+}

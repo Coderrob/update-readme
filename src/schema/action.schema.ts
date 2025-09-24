@@ -17,12 +17,13 @@
  */
 
 import { z } from 'zod';
-
-import { CompositeRun } from '../types.js';
+import { CompositeRun } from '../types/index.js';
 import { BrandingSchema } from './branding.schema.js';
 import { InputsSchema } from './inputs.schema.js';
 import { OutputsSchema } from './outputs.schema.js';
 import { RunsSchema } from './runs.schema.js';
+
+export type Action = z.infer<typeof ActionSchema>;
 
 /**
  * GitHub Action Schema.
@@ -36,7 +37,6 @@ import { RunsSchema } from './runs.schema.js';
  *
  * Optional properties include `author` and `branding`.
  */
-
 export const ActionSchema = z
   .object({
     name: z.string().describe('The name of the action.'),

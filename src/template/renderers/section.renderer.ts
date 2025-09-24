@@ -1,5 +1,4 @@
 /*
- *
  * Copyright 2025 Robert Lindley
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,14 +15,11 @@
  *
  */
 
-import { getInput } from './core/action-inputs.js';
-import { Input } from './core/types.js';
-import { UpdateReadmeAction } from './core/update-readme.action.js';
+import { IRender } from '../../types/index.js';
 
-(async () => {
-  await new UpdateReadmeAction({
-    [Input.ACTION_FILE_PATH]: getInput[Input.ACTION_FILE_PATH],
-    [Input.README_FILE_PATH]: getInput[Input.README_FILE_PATH],
-    [Input.ACTION_REPOSITORY]: getInput[Input.ACTION_REPOSITORY]
-  }).execute();
-})();
+/**
+ * Base class for markdown sections.
+ */
+export abstract class SectionRenderer implements IRender {
+  abstract render(): Promise<string>;
+}
